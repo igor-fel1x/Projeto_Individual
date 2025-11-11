@@ -1,0 +1,17 @@
+body{
+    margin: 0;
+}
+
+.navbar{
+    display: flex;
+    background-color: white;
+    height: 54px;
+    width: auto;
+    border-bottom: 3px solid red;
+    margin-top: 0;
+}
+
+.navbar img{
+    height: 58px;
+    /* height: 88px; */
+}
