@@ -16,46 +16,47 @@
     </div>
 
 
-<div class="geral">
-    <div class="boxCadastro">
-        <div class=" geralInput">
-            <div class="inputsBox1">
-                <div class="titulo">
-                <h4> Login</h4>
-                 </div>
+    <div class="geral">
+        <div class="boxCadastro">
+            <div class=" geralInput">
+                <div class="inputsBox1">
+                    <div class="titulo">
+                        <h4> Login</h4>
+                    </div>
 
-                <input type="text" id="input_email" placeholder="Email"> <br>
+                    <input type="text" id="input_email" placeholder="Email"> <br>
 
-                <input type="text" id="input_senha" placeholder="Senha"> <br>
-
-                <div class="botao">
-                    <button onclick="entrar()">Enviar Dados</button>
+                    <input type="text" id="input_senha" placeholder="Senha"> <br>
+                    
+                    <div class="botao">
+                        <button onclick="entrar()">Enviar Dados</button>
+                    </div>
+                    <div id="div_aguardar" class="loading-div">
+                        <img src="./assets/circle-loading.gif" height="100px" id="loading-gif">
+                    </div>
+                    
                 </div>
-            
             </div>
-       </div>
-       <div class="geral2">
-        <div class="txt1">
-            <a> <br>Faça seu login!</a>
-       </div>
-        <div class="img-box">
-           <video width="300px" autoplay loop muted playsinline>
-    <source src="assets/imgs/charles.mp4" type="video/mp4">
-    Seu navegador não suporta a tag de vídeo.
-</video>
- <div id="div_aguardar" class="loading-div">
-                    <img src="./assets/circle-loading.gif" id="loading-gif">
+            <div class="geral2">
+                <div class="txt1">
+                    <a> <br>Faça seu login!</a>
                 </div>
-                <div class="card_erro" id="cardErro">
-                    <div id="div_erros_login"></div>
-                <span id="mensagem_erro"></span>
+                <div class="img-box">
+                    <video width="300px" autoplay loop muted playsinline>
+                        <source src="assets/imgs/charles.mp4" type="video/mp4">
+                        Seu navegador não suporta a tag de vídeo.
+                    </video>
+                    <div class="card_erro" id="cardErro">
+                        <div id="div_erros_login"></div>
+                        <span id="mensagem_erro"></span>
+                    </div>
+                </div>
             </div>
         </div>
-        </div>
-    </div>
 
     </div>
 </body>
+
 </html>
 
 <script>
@@ -127,5 +128,13 @@
     function sumirMensagem() {
         cardErro.style.display = "none"
     }
+    function aguardar() {
+  document.getElementById("div_aguardar").style.display = "block";
+}
+
+function finalizarAguardar() {
+  document.getElementById("div_aguardar").style.display = "none";
+}
+
 
 </script>

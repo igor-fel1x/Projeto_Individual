@@ -2,69 +2,71 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/cadastro.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/cadastro.css">
 </head>
 
 <body>
 
-    <div class=" navbar">
-        <img src="assets/imgs/Design_sem_nome__1_-removebg-preview.png" alt="">
-    </div>
+  <div class=" navbar">
+    <img src="assets/imgs/Design_sem_nome__1_-removebg-preview.png" alt="">
+  </div>
 
 
-<div class="geral">
+  <div class="geral">
     <div class="boxCadastro">
-        <div class=" geralInput">
-            <div class="inputsBox1">
-                <div class="titulo">
-                <h4> Cadastre-se agora</h4>
-                 </div>
+      <div class=" geralInput">
+        <div class="inputsBox1">
+          <div class="titulo">
+            <h4> Cadastre-se agora</h4>
+          </div>
 
-                <input type="text" id="nome_input" placeholder="Nome"> <br>
- 
-                <input type="text" id="email_input" placeholder="Email"> <br>
+          <input type="text" id="nome_input" placeholder="Nome"> <br>
 
-                <input type="text" id="senha_input" placeholder="Senha"> <br>
-        
-                <input type="text" id="confirmacao_senha_input" placeholder="Confirmar Senha"> <br>
+          <input type="text" id="email_input" placeholder="Email"> <br>
 
-                <div class="botao">
-                    <button onclick="cadastrar()">Enviar Dados</button>
+          <input type="text" id="senha_input" placeholder="Senha"> <br>
 
-                    <!-- <span> kkkkk </span> -->
-                </div>
-            
-            </div>
-       </div>
-       <div class="geral2">
+          <input type="text" id="confirmacao_senha_input" placeholder="Confirmar Senha"> <br>
+
+          <div class="botao">
+            <button onclick="cadastrar()">Enviar Dados</button>
+          </div>
+          <div id="mensagem_erro"></div>
+          <div id="div_aguardar" class="loading-div">
+            <img src="./assets/circle-loading.gif" height="100px" id="loading-gif" />
+          </div>
+
+        </div>
+      </div>
+      <div class="geral2">
         <div class="txt1">
-            <a> <br>Faça seu cadastro agora mesmo e veja sua força!</a>
-       </div>
+          <a> <br>Faça seu cadastro agora mesmo e veja sua força!</a>
+        </div>
         <div class="img-box">
-           <video height="180px" width="300px" autoplay loop muted playsinline>
-    <source src="assets/imgs/spider.mp4" type="video/mp4">
-    Seu navegador não suporta a tag de vídeo.
-</video>
+          <video height="180px" width="300px" autoplay loop muted playsinline>
+            <source src="assets/imgs/spider.mp4" type="video/mp4">
+            Seu navegador não suporta a tag de vídeo.
+          </video>
         </div>
-        </div>
+      </div>
     </div>
- <div id="div_aguardar" class="loading-div">
-          <img src="./assets/circle-loading.gif" id="loading-gif" />
-        </div>
 
-        <div id="div_erros_login"></div>
-    </div>
+    <div id="cardErro" style="display:none; color:red;"></div>
+<div id="mensagem_erro"></div>
+
+  </div>
 </body>
+
 </html>
 
 <script>
 
   // Array para armazenar empresas cadastradas para validação de código de ativação 
   function cadastrar() {
-    // aguardar();
+    aguardar();
 
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
@@ -78,13 +80,13 @@
       nomeVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
-      confirmacaoSenhaVar == "" 
+      confirmacaoSenhaVar == ""
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
         "(Mensagem de erro para todos os campos em branco)";
 
-      // finalizarAguardar();
+      finalizarAguardar();
       return false;
     } else {
       setInterval(sumirMensagem, 5000);
@@ -109,30 +111,37 @@
 
         if (resposta.ok) {
           cardErro.style.display = "block";
-          window.location = "http://localhost:3333/login.html"
+
 
           mensagem_erro.innerHTML =
             "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-          
-          setTimeout(() => {
-            window.location = "login.html";
-          }, "2000");
 
-          limparFormulario();
-          // finalizarAguardar();
+          setTimeout(() => {
+  console.log("Tentando redirecionar...");
+  window.location.href = "http://localhost:3333/login.html";
+}, 2000);
+
+          finalizarAguardar();
         } else {
           throw "Houve um erro ao tentar realizar o cadastro!";
         }
       })
       .catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
-        // finalizarAguardar();
+        finalizarAguardar();
       });
 
     return false;
   }
 
   function sumirMensagem() {
-    // cardErro.style.display = "none";
+    cardErro.style.display = "none";
   }
+     function aguardar() {
+  document.getElementById("div_aguardar").style.display = "block";
+}
+
+function finalizarAguardar() {
+  document.getElementById("div_aguardar").style.display = "none";
+} 
 </script>
