@@ -1,0 +1,53 @@
+body {
+  font-family: sans-serif;
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 20px;
+}
+
+.geral{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.conteudo-geral{
+    height: 100%;
+  width: 50%;
+  margin: auto;
+  background-color: orange;
+
+}
+
+.contadorForca {
+    display: flex;
+  font-size: 24px;
+  padding: 10px;
+  background-color: blue;
+  width: 90%;
+  justify-content: center;
+}
+
+.alvo img,
+.alvo2 img, 
+.luva img {
+  width: 100px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.barra{
+  width: 100%;
+  height: 25px;
+  background: #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.barraForca {
+  height: 100%;
+  width: 0%;
+  background: #555;
+  transition: width 0.3s ease;
+}

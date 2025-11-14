@@ -25,7 +25,7 @@ function aguardar() {
 
 function finalizarAguardar(texto) {
     var divAguardar = document.getElementById("div_aguardar");
-    divAguardar.style.display = "none";
+    divAguardar.style.display = "block";
 
     var divErrosLogin = document.getElementById("div_erros_login");
     if (texto) {
@@ -33,4 +33,5 @@ function finalizarAguardar(texto) {
         divErrosLogin.innerHTML = texto;
     }
 }
+
 
