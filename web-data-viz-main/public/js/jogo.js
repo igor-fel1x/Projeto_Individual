@@ -8,6 +8,7 @@ var barraForca = document.getElementById("barraForca");
 var contador = document.getElementById("contadorforca");
 var luvaImg = document.querySelector(".luva img");
 var alvoImg = document.querySelector(".alvo img");
+ 
 
 function atualizar(){
     var porc = (barra/maxBarra) * 100 
@@ -57,6 +58,8 @@ function atualizar(){
   contadorForca.innerHTML = "Força final: " + forcaFinal;
   luvaImg.src = "assets/imgs/imgluva.png";
   alvoImg.src = "assets/imgs/alvo2.png";
+  alvoImg.style.heigth = "120px"
+ 
 
   jogo = false
 

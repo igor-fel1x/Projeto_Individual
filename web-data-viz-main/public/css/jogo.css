@@ -1,31 +1,53 @@
 body {
-  font-family: sans-serif;
-  background-color: #f4f4f4;
-  text-align: center;
-  padding: 20px;
+margin: 0;
+background-color: blue;
+
+}
+.navbar{
+    display: flex;
+    background-color: white;
+    height: 54px;
+    width: auto;
+    border-bottom: 3px solid red;
+    margin-top: 0;
+}
+
+.navbar img{
+    height: 58px;
+    /* height: 88px; */
 }
 
 .geral{
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: blue;
+    
 }
 
 .conteudo-geral{
     height: 100%;
   width: 50%;
   margin: auto;
-  background-color: orange;
+  background-color: rgb(12, 12, 12);
+  align-items: center;
 
 }
 
-.contadorForca {
-    display: flex;
-  font-size: 24px;
-  padding: 10px;
-  background-color: blue;
-  width: 90%;
+.conteudo-geral{
+     display: flex;
   justify-content: center;
+  flex-direction: column;
+  
+   
+}
+.contadorForca {
+     font-size: 24px;
+  padding: 10px 8px;
+  align-items: center;
+  background-color: green;
+  border: 2px solid white;
 }
 
 .alvo img,
@@ -37,7 +59,7 @@ body {
 }
 
 .barra{
-  width: 100%;
+  width: 80%;
   height: 25px;
   background: #ccc;
   border-radius: 8px;
