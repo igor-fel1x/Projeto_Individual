@@ -1,11 +1,12 @@
 var barra = 0
-var maxBarra = 50
+var maxBarra = 80
 var tempo = 5
 var intervalo
 var jogo = false 
 
 var barraForca = document.getElementById("barraForca");
-var contador = document.getElementById("contadorforca");
+var geral = document.getElementById("geral");
+var contador = document.getElementById("contadorForca");
 var luvaImg = document.querySelector(".luva img");
 var alvoImg = document.querySelector(".alvo img");
  
@@ -17,7 +18,7 @@ function atualizar(){
      if(porc >= 0 && porc < 40){
         barraForca.style.backgroundColor = "#18d81eff"
       } else if ( porc >= 40 && porc < 80){
-        barraForca.style.backgroundColor = "#a5d818ff"
+        barraForca.style.backgroundColor = "#fffb00ff"
       } else {
          barraForca.style.backgroundColor = "#ff0000ff"
       }
@@ -33,37 +34,38 @@ function atualizar(){
             atualizar()
         }
     }
+     function executarSoco() {
+  var forcaFinal = barra * 20;
+  contador.innerHTML = "Força final: " + forcaFinal;
+  luvaImg.src = "assets/imgs/imgluva.png";
+  alvoImg.src = "assets/imgs/alvo2.png";
+  alvoImg.height = 120;
+  alvoImg.width = 120;
+  jogo = false
+
+
+}
 
     function iniciar(){
         alvoImg.src = "assets/imgs/alvo.png";
         barra = 0 
         tempo = 5
-        contadorForca.innerHTML = "Tempo: " + tempo + "s";
+        contador.innerHTML = "Tempo: " + tempo + "s";
         jogo = true
         atualizar ()
 
   intervalo = setInterval(function () {
     tempo--;
-    contadorForca.innerHTML = "Tempo: " + tempo + "s";
+    contador.innerHTML = "Tempo: " + tempo + "s";
 
     if (tempo <= 0) {
       clearInterval(intervalo);
       executarSoco();
     }
   }, 1000);
+
+        
     }
 
-    function executarSoco() {
-  var forcaFinal = barra * 20;
-  contadorForca.innerHTML = "Força final: " + forcaFinal;
-  luvaImg.src = "assets/imgs/imgluva.png";
-  alvoImg.src = "assets/imgs/alvo2.png";
-  alvoImg.style.heigth = "120px"
- 
+geral.onclick = aumentarforca;
 
-  jogo = false
-
-  
-}
-
-luvaImg.addEventListener("click", aumentarforca);

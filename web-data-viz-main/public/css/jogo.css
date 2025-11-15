@@ -1,75 +1,70 @@
 body {
-margin: 0;
-background-color: blue;
-
+    margin: 0;
+    background-color: blue;
 }
-.navbar{
+
+.navbar {
     display: flex;
     background-color: white;
     height: 54px;
     width: auto;
     border-bottom: 3px solid red;
     margin-top: 0;
+    margin-bottom: 100px;
 }
 
-.navbar img{
+.navbar img {
     height: 58px;
     /* height: 88px; */
 }
 
-.geral{
+/* .geral {
+} */
+
+.conteudo-geral {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+    margin: auto;
+    border: 1px  white;
+    border-radius: 10px;
+    background-color: rgb(12, 12, 12);
     align-items: center;
-    height: 100%;
-    background-color: blue;
-    
-}
 
-.conteudo-geral{
-    height: 100%;
-  width: 50%;
-  margin: auto;
-  background-color: rgb(12, 12, 12);
-  align-items: center;
 
 }
 
-.conteudo-geral{
-     display: flex;
-  justify-content: center;
-  flex-direction: column;
-  
-   
-}
 .contadorForca {
-     font-size: 24px;
-  padding: 10px 8px;
-  align-items: center;
-  background-color: green;
-  border: 2px solid white;
+    font-size: 24px;
+    padding: 10px 8px;
+    align-items: center;
+    background-color: green;
+    border: 2px solid white;
+    height: 100%;
 }
 
 .alvo img,
-.alvo2 img, 
+.alvo2 img,
 .luva img {
-  width: 100px;
-  margin: 10px;
-  cursor: pointer;
+    width: 100px;
+    margin: 10px;
+    cursor: pointer;
 }
 
-.barra{
-  width: 80%;
-  height: 25px;
-  background: #ccc;
-  border-radius: 8px;
-  overflow: hidden;
-  margin-top: 20px;
+.barra {
+    width: 88%;
+    height: 25px;
+    background: #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 20px;
 }
 
 .barraForca {
-  height: 100%;
-  width: 0%;
-  background: #555;
-  transition: width 0.3s ease;
+    height: 100%;
+    width: 0%;
+    background: #555;
+    transition: width 0.3s ease;
 }
