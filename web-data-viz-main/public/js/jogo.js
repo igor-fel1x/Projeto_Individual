@@ -9,6 +9,8 @@ var geral = document.getElementById("geral");
 var contador = document.getElementById("contadorForca");
 var luvaImg = document.querySelector(".luva img");
 var alvoImg = document.querySelector(".alvo img");
+
+
  
 
 function atualizar(){
@@ -40,7 +42,7 @@ function atualizar(){
   luvaImg.src = "assets/imgs/imgluva.png";
   alvoImg.src = "assets/imgs/alvo2.png";
   alvoImg.height = 120;
-  alvoImg.width = 120;
+  alvoImg.style.width = "120px";
   jogo = false
 
 
