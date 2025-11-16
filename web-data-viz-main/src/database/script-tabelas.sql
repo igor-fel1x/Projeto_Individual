@@ -417,3 +417,33 @@ input {
   animation-iteration-count: infinite;
 }
 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <div class="navbar">
+    <div class="conteudo-nav">
+    <img src="assets/imgs/navbar.png" alt="">
+    <a href="">Jiu Jitsu</a>
+    <a href=""> Muay Thai</a>
+    <a href="">Cadastro</a>
+    <a href="">Login</a>
+    </div>
+  </div>
+  <div class="home">
+    <img src="assets/imgs/home1.2.png" alt="">
+    <p> Artes Marciais salvam vidas</p>
+  </div>
+
+
+
+  
+</body>
+</html>

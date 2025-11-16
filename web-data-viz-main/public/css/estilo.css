@@ -1,0 +1,488 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* background-color: rgb(12, 12, 12); */
+}
+
+:root {
+    --tamanho-header: 80px;
+    --tamanho-banner: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+    --tamanho-simulador: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+    --tamanho-login: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+    --tamanho-footer: 65px;
+
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    height: 54px;
+    width: 100%;
+    border-bottom: 2px solid red;
+    background-color: black;
+}
+
+.container img {
+    height: 60px;
+}
+
+.navbar {
+    align-items: center;
+    height: 100%;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+
+.navbar {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    color: #e3b062;
+}
+
+.titulo {
+    color: #32b9cd;
+    width: fit-content;
+    font-weight: 500;
+}
+
+
+/* BANNER */
+
+.banner {
+    display: flex;
+    height: 70%;
+    justify-content: space-between;
+    background-color: black;
+}
+
+.conteudo-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.conteudo-home p {
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    font-size: 3.8em;
+    color: white;
+}
+
+.img-home {
+    display: flex;
+    width: 80%;
+}
+
+/* parte 1 */
+
+.artemarcial {
+    /* background-color: orange; */
+    width: 100%;
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 5px;
+    width: 99%;
+}
+
+.conteudo-titulo {
+    text-align: center;
+    background-color: black;
+    width: 20%;
+    height: 55px;
+    /* padding: 2px 3px; */
+    border-radius: 4px;
+    border: 2px solid red;
+    color: white;
+    font-size: 1.2em;
+}
+
+.geral1 {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+}
+
+.geral2 {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    width: 100%;
+    /* background-color: #ED145B; */
+    border-bottom: 6px solid black;
+
+
+}
+
+.txt1-art,
+.txt2-art {
+    font-size: 1.8em;
+    text-align: justify;
+    width: 50%;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: black;
+}
+
+.img1,
+.img2 {
+    display: flex;
+    justify-content: center;
+    width: 45%;
+    /* background-color: #32b9cd; */
+}
+
+.img2 img,
+.img1 img {
+    height: 40vh;
+}
+
+/*parte2 */
+.jiujitsu {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 4px solid red;
+    background-color: black;
+}
+
+.titulo2 {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+    height: 55px;
+}
+
+.conteudo-titulo2{
+    background-color: green;
+    border: 3px solid red;
+    background-color: rgb(177, 176, 176);
+    border-radius: 3px;
+    width: 40%;
+    text-align: center;
+}
+
+.titulo2 span {
+    font-size: 1.7em;
+    color: black;
+}
+
+.geral3 {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    /* background-color: #ED145B; */
+}
+
+.geral4 {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    width: 100%;
+    /* background-color: #ED145B; */
+    border-bottom: 2px solid red;
+    margin-bottom: 10px;
+
+
+}
+
+.txt1-jiu,
+.txt2-jiu {
+    font-size: 1.8em;
+    text-align: justify;
+    width: 50%;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: white;
+}
+
+.img1-jiu,
+.img2-jiu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    /* background-color: #32b9cd; */
+}
+
+.img2-jiu img,
+.img1-jiu img {
+    height: 40vh;
+}
+
+
+
+/* FOOTER */
+
+.footer {
+    /* background-color: #32b9cd; */
+    height: 150px;
+    color: #fff;
+    display: flex;
+    font-size: 15px;
+}
+
+.footer .container {
+    justify-content: center;
+    text-align: center;
+}
+
+.footer .container .version {
+    font-size: 12px;
+}
+
+/* LOGIN */
+
+.login {
+    height: var(--tamanho-login);
+    background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
+    background-size: cover;
+}
+
+.login .container {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.card {
+    width: 50%;
+    background-color: #e5e5e5;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: palevioletred;
+    flex-direction: column;
+    height: fit-content;
+    padding: 20px 0;
+}
+
+.card h2 {
+    margin: 0;
+    font-size: 30px;
+}
+
+.formulario {
+    display: flex;
+    height: 90%;
+    width: 80%;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.formulario span {
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.formulario input {
+    border: 2px solid #32b9cd;
+    text-align: center;
+    border-radius: 10px;
+    margin: 0;
+}
+
+.formulario select {
+    border: 2px solid #32b9cd;
+    background-color: white;
+    color: gray;
+    height: 36px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 0;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 5px 0;
+}
+
+.botao {
+    cursor: pointer;
+    font-family: "Barlow", sans-serif;
+    border: 0;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #fff;
+    /* background-color: #ED145B; */
+    width: 120px;
+    height: 30px;
+    align-self: center;
+    margin-top: 20px;
+}
+
+.loading-div {
+    width: 50px;
+    display: none;
+}
+
+.loading-div img {
+    height: 50px;
+    width: 50px;
+}
+
+#div_erros_login {
+    display: none
+}
+
+/* FORMULARIO */
+
+.alerta_erro {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.card_erro {
+    display: none;
+    background-color: #fff;
+    color: black;
+    width: 230px;
+    position: fixed;
+    border-radius: 4px;
+    border: #ED145B 3px solid;
+    padding: 10px;
+    margin-right: 10%;
+}
+
+.card_erro #mensagem_erro {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.formulario .tipo_campo {
+    font-size: 20px;
+    font-weight: 600 !important;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin-bottom: 10px;
+    border: 2px solid #32b9cd;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.btn {
+    font-family: "Barlow", sans-serif;
+    border: 0;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 10px 15px;
+    color: white;
+    /* background-color: #ED145B; */
+    width: 120px;
+    align-self: center;
+    margin-top: 5px;
+}
+
+.loading-div {
+    width: 50px;
+    margin: auto;
+    display: none;
+}
+
+.loading-div img {
+    height: 50px;
+    width: 50px;
+}
+
+/* SIMULADOR */
+
+.simulador {
+    color: white;
+}
+
+.simulador .container {
+    flex-direction: column;
+    overflow: scroll;
+    height: var(--tamanho-simulador);
+}
+
+/* ALERTA */
+
+#alerta {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.mensagem-alarme {
+    background-color: white;
+    border-radius: 5px;
+    width: 300px;
+    height: 80px;
+    margin: 10px;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.mensagem-alarme h3 {
+    font-size: 14px;
+    margin: 0;
+}
+
+.mensagem-alarme .informacao {
+    width: 66%;
+}
+
+.alarme-sino {
+    width: 48px;
+    height: 48px;
+    animation-name: bell;
+    animation-duration: 4s;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/1157/1157000.png');
+    background-size: cover;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bell {
+    0% {
+        transform: rotate(25deg)
+    }
+
+    25% {
+        transform: rotate(-25deg)
+    }
+
+    50% {
+        transform: rotate(25deg)
+    }
+
+    75% {
+        transform: rotate(-25deg)
+    }
+
+    100% {
+        transform: rotate(25deg)
+    }
+}
