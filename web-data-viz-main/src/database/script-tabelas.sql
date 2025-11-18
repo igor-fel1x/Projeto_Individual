@@ -3,63 +3,54 @@
 -- ter este arquivo aqui não significa que a tabela em seu BD estará como abaixo!
 
 /*
-comandos para mysql server
+
+
+comandos para mysql server provisorio
 */
 
-CREATE DATABASE aquatech;
+create database Site;
+use Site;
 
-USE aquatech;
 
-CREATE TABLE empresa (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	razao_social VARCHAR(50),
-	cnpj CHAR(14),
-	codigo_ativacao VARCHAR(50)
+
+create table Usuario(
+idUsuario int primary key auto_increment,
+nome varchar(45) unique not null, 
+email varchar(45) unique not null, 
+senha varchar(45) not null
 );
 
-CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50),
-	fk_empresa INT,
-	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
+create table Jogo(
+idJogo int primary key auto_increment, 
+nome varchar(45)
 );
 
-CREATE TABLE aviso (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	titulo VARCHAR(100),
-	descricao VARCHAR(150),
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
-);
+create table resultado(
+fk_Usuario int not null,
+fk_Jogo int not null,
+forca_maxima decimal(5, 2) not null ,
+forca_minima decimal(5, 2) not null ,
+total_tentativas int not null DEFAULT 0,
+primary key (fk_usuario, fk_jogo),
+    foreign key (fk_usuario) REFERENCES USUARIO(id_usuario),
+    foreign key (fk_jogo) REFERENCES JOGO(id_jogo)
+    );
+    
+  /*  CREATE TABLE MEDICAO (
+    id_medicao INT PRIMARY KEY AUTO_INCREMENT,
+    fk_usuario INT not null ,
+    fk_jogo INT not null ,
+    valor_forca DECIMAL(5, 2) not null , 
+    data_hora DATETIME 	DEFAULT CURRENT_TIMESTAMP,
+    foreign key (fk_usuario) REFERENCES USUARIO(id_usuario),
+    foreign key (fk_jogo) REFERENCES JOGO(id_jogo)
+); */
 
-create table aquario (
-/* em nossa regra de negócio, um aquario tem apenas um sensor */
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	descricao VARCHAR(300),
-	fk_empresa INT,
-	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
-);
+select * from Usuario;
+insert into Usuario values
+(default, 'igor', 'igor@email.com', 'igor'); 
 
-/* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
-
-create table medida (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	dht11_umidade DECIMAL,
-	dht11_temperatura DECIMAL,
-	luminosidade DECIMAL,
-	lm35_temperatura DECIMAL,
-	chave TINYINT,
-	momento DATETIME,
-	fk_aquario INT,
-	FOREIGN KEY (fk_aquario) REFERENCES aquario(id)
-);
-
-insert into empresa (razao_social, codigo_ativacao) values ('Empresa 1', 'ED145B');
-insert into empresa (razao_social, codigo_ativacao) values ('Empresa 2', 'A1B2C3');
-insert into aquario (descricao, fk_empresa) values ('Aquário de Estrela-do-mar', 1);
-insert into aquario (descricao, fk_empresa) values ('Aquário de Peixe-dourado', 2);
+truncate table Usuario;
 
 
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
