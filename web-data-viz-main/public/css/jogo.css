@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: blue;
+    background-color: rgb(16, 16, 16);
 }
 
 .navbar {
@@ -22,7 +22,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: orange;
+    /* background-color: orange; */
     height: 100%;
     width: 100%;
 }
@@ -34,18 +34,20 @@ body {
     background-color: rgb(255, 0, 64);
     height: 100%;
     width: 50%;
-    border: 1px  white;
+    border: 2px solid  white;
     border-radius: 10px;
-    background-color: rgb(221, 179, 179);
+    background-color: rgb(12, 12, 12);
 
 }
 
 .contadorForca {
     font-size: 24px;
     padding: 10px 8px;
+    margin-top: 10px;
     align-items: center;
-    background-color: green;
+    background-color: rgb(1, 182, 1);
     border: 2px solid white;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     height: 100%;
 }
 

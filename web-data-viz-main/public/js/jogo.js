@@ -1,5 +1,5 @@
 var barra = 0
-var maxBarra = 80
+var maxBarra = 100
 var tempo = 5
 var intervalo
 var jogo = false 
@@ -37,12 +37,10 @@ function atualizar(){
         }
     }
      function executarSoco() {
-  var forcaFinal = barra * 20;
+  var forcaFinal = barra * 10;
   contador.innerHTML = "Força final: " + forcaFinal;
   luvaImg.src = "assets/imgs/imgluva.png";
-  alvoImg.src = "assets/imgs/alvo2.png";
-  alvoImg.height = 120;
-  alvoImg.style.width = "120px";
+  // alvoImg.src = "assets/imgs/alvo2.png";
   jogo = false
 
 
@@ -64,7 +62,7 @@ function atualizar(){
       clearInterval(intervalo);
       executarSoco();
     }
-  }, 1000);
+  }, 1000); 
 
         
     }
