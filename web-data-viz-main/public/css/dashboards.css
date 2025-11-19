@@ -8,6 +8,20 @@ body {
   font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.navbar{
+    display: flex;
+    background-color: white;
+    height: 54px;
+    width: auto;
+    border-bottom: 3px solid red;
+    margin-top: 0;
+}
+
+.navbar img{
+    height: 58px;
+    /* height: 88px; */
+}
+
 .label-captura {
   display: flex;
   justify-content: center;
