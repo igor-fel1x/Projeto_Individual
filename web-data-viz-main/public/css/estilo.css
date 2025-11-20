@@ -2,18 +2,19 @@
 
 body {
     margin: 0;
-    font-family: 'Times New Roman', Times, serif
+    font-family: 'Montserrat', sans-serif;
+
     /* background-color: rgb(12, 12, 12); */
 }
 
-:root {
+/* :root {
     --tamanho-header: 80px;
     --tamanho-banner: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
     --tamanho-simulador: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
     --tamanho-login: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
     --tamanho-footer: 65px;
 
-}
+} */
 
 
 .container {
@@ -41,16 +42,16 @@ body {
 
 
 .navbar {
-    width: 300px;
+    width: 30%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     list-style: none;
-    color: #e3b062;
+    /* color: #e3b062; */
 }
 
 .titulo {
-    color: #32b9cd;
+    /* color: #32b9cd; */
     width: fit-content;
     font-weight: 500;
 }
@@ -73,7 +74,7 @@ body {
 }
 
 .conteudo-home p {
-    width: 50%;
+    width: 60%;
     margin: 0;
     padding: 0;
     font-size: 3.8em;
@@ -178,7 +179,7 @@ body {
     /* border: 2px solid red; */
     /* background-color: white; */
     border-radius: 3px;
-    width: 60%;
+    width: 70%;
     height: 45px;
 }
 
@@ -253,6 +254,7 @@ body {
     display: flex;
     flex-direction: column; 
     align-items: center; 
+    
 }
  .coluna-valores{
      display: flex;
@@ -260,8 +262,13 @@ body {
      width: 50%;
     flex-direction: column; 
     align-items: center; 
-
+  
  }
+
+ .coluna-beneficios p,
+ .coluna-valores p{
+     font-weight: bold;
+ } 
 .beneficios, .valores {
     display: flex;
     justify-content: center;
@@ -281,7 +288,8 @@ body {
     width: 90%;
     text-align: center;
     align-items: center;
-    font-size: 1.2em    ;
+    font-size: 1.2em;
+    
     
 }
 .boxes, .boxes1{
@@ -415,6 +423,7 @@ body {
     width: 100%;
     height: 100%;
     border-top: 4px solid red;
+    margin-bottom: 40px;
     }
 
 .titulo-nomes {
@@ -469,6 +478,386 @@ body {
     width: auto;
     border-radius: 20px;
 }
+
+/* inicio jogo */
+
+.jogo {
+    display: flex;
+    height: 70vh;
+    justify-content: space-between;
+    border-top: 4px solid red;
+      background-color: rgb(16, 16, 16);
+    align-items: center;
+}
+
+.conteudo-jogo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    gap: 30px; 
+    /* background-color: #32b9cd; */
+}
+
+.conteudo-jogo p {
+    width: 70%;
+    margin: 0;
+    padding: 0;
+    font-size: 1.7em;
+    color: white;
+    text-align: center;
+    /* font-weight: bold;  */
+}
+
+
+.conteudo-jogo button {
+    background-color: red;
+    color: white;
+    padding: 15px 40px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.img-jogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    /* background-color: #32b9cd; */
+}
+
+    .img-jogo img{
+         width: 80%;       /* Valor menor */
+        height: auto;
+        border-radius: 2px;
+    }
+
+    /* inicio muay thai */
+.jiujitsu {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 4px solid red;
+     background-color: rgb(16, 16, 16);
+}
+
+.titulo2 {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    width: 35%;
+    height: 55px;
+    text-align: center;
+}
+
+.conteudo-titulo2{
+    /* background-color: green; */
+    /* border: 2px solid red; */
+    /* background-color: white; */
+    border-radius: 3px;
+    width: 70%;
+    height: 45px;
+}
+
+.titulo2 p {
+    font-size: 1.9em;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.geral3 {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    /* background-color: #ED145B; */
+}
+
+.geral4 {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    width: 100%;
+    /* background-color: #ED145B; */
+    border-bottom: 4px solid red;
+
+
+}
+
+.txt1-jiu,
+.txt2-jiu {
+    font-size: 1.8em;
+    text-align: justify;
+    width: 50%;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: white;
+}
+
+.img1-jiu,
+.img2-jiu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    /* background-color: #32b9cd; */
+}
+
+.img2-jiu img,
+.img1-jiu img {
+    height: 40vh;
+    margin-bottom: 40px;
+}
+
+/* inicio beneficios e valores */
+
+.geralbox {
+    border-top: 4px solid black;
+    /* background-color: green; */
+    display: flex; 
+    flex-direction: row; 
+    align-items: center;
+    justify-content: space-between; 
+    /* gap: 80px;  */
+    width: 100%;
+    height: 90vh;
+    border-bottom: 4px solid black;
+}
+.coluna-beneficios{
+    /* background-color: orange; */
+    width: 50%; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    
+}
+ .coluna-valores{
+     display: flex;
+     /* background-color: red; */
+     width: 50%;
+    flex-direction: column; 
+    align-items: center; 
+  
+ }
+
+ .coluna-beneficios p,
+ .coluna-valores p{
+     font-weight: bold;
+ } 
+.beneficios, .valores {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    /* background-color: #ED145B; */
+    width: 46%;
+
+}
+
+.conteudotitulo3, .conteudotitulo4{
+    /* background-color: rgb(81, 0, 128);  */
+    border: 3px solid red;
+    background-color: black;
+    color: white;
+    border-radius: 3px;
+    height: 30px;
+    width: 90%;
+    text-align: center;
+    align-items: center;
+    font-size: 1.2em;
+    
+    
+}
+.boxes, .boxes1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 20px;
+    height: 40vh;
+    width: 80%;
+}
+
+
+ .box1, .box1-valores{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 10px;
+    gap: 20px;
+ }
+
+ .beneficios1, .beneficios1-valores{
+    /* background-color: purple; */
+    height: 120px;
+    width: 48%;
+ }
+ .conteudo-beneficios, .conteudo-valores{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     gap: 10px;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 4px;
+ }
+
+ .beneficios1 img, .beneficios1-valores img{
+    height: 40px;
+ }
+
+ /* inicio federçoes */
+
+ .federacoes {
+     background-color: rgb(16, 16, 16); 
+    width: 100%;
+    height: 100%;
+    border-top: 4px solid red;
+    }
+
+.titulo-federacoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 5px;
+    width: 99%;
+}
+
+.conteudo-federacao {
+    text-align: center;
+    /* background-color: white; */
+    width: 40%;
+    height: 55px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    /* padding: 2px 3px; */
+    border-radius: 4px;
+    /* border: 2px solid red; */
+    color: white;
+    font-size: 1.9em;
+}
+
+.geral1-federacao {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.geral2-federacao {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+    width: 100%;
+    margin-top: 50px;
+    width: 100%;
+    /* margin-bottom: 20px; */
+
+
+}
+
+.txt1-federacao,
+.txt2-federacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.4em;
+    text-align: left;
+    width: 50%;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: white;
+}
+.txt1-federacao p, .txt2-federacao p {
+    width: 90%; 
+    text-align: left;
+}
+
+.cbjj,
+.ibjjf {
+    display: flex;
+    justify-content: center;
+    width: 45%;
+    /* background-color: #32b9cd; */
+}
+
+.ibjjf img,
+.cbjj img {
+    height: 40vh;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+/* inicio grandes nomes */
+.nomes {
+     background-color: white; 
+    width: 100%;
+    height: 100%;
+    border-top: 4px solid red;
+    margin-bottom: 40px;
+    }
+
+.titulo-nomes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 5px;
+    width: 99%;
+}
+
+.conteudo-nomes {
+     text-align: center;
+    /* background-color: white; */
+    width: 40%;
+    height: 55px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    /* padding: 2px 3px; */
+    border-radius: 4px;
+    /* border: 2px solid red; */
+    color: black;
+    font-size: 1.9em;
+}
+
+.geral1-nomes {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+    margin-top: 50px;
+    width: 100%;
+}
+.txt1-nomes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.4em;
+    text-align: left;
+    width: 50%;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: black;
+}
+.nome {
+    display: flex;
+    justify-content: center;
+    width: 45%;
+    /* background-color: #32b9cd; */
+}
+
+.nome img {
+    height: 40vh;
+    width: auto;
+    border-radius: 20px;
+}
+
 
 /* FOOTER */
 

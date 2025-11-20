@@ -19,7 +19,7 @@ body {
     border-bottom: 3px solid white; 
     justify-content: space-between; 
     align-items: center; 
-    padding: 0 2%; 
+    padding: 10px ; 
 }
 
 .navbar img{
@@ -31,7 +31,7 @@ body {
 }
 
 .hello h3 {
-    font-size: 1rem;
+    font-size: 1em;
     margin: 0;
 }
 
@@ -53,7 +53,7 @@ body {
 .cnt-kpi {
     background-color: #222;
     padding: 20px 5px; 
-    border-radius: 0.5rem; 
+    border-radius: 5px; 
     text-align: center;
     flex: 1;
     border-bottom: 2px solid #f00000;
@@ -90,11 +90,9 @@ div:has(canvas) {
 
 .imagem-direita img{
     height: 400px; 
-    
   filter: drop-shadow(10px 10px 5px red);       
 }
 .imagem-esquerda img{
     height: 400px; 
-    
    filter: drop-shadow(-8px 4px 10px red);
 }

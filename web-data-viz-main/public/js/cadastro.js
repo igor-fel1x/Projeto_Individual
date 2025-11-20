@@ -1,6 +1,11 @@
 var divAguardar = document.getElementById("div_aguardar");
     divAguardar.style.display = "none";
 
+    var listaCaracteres = ['!','@','#','$', '%', '&', '*'];
+    var emailValido = false;
+
+
+
 function cadastrar() {
     aguardar();
 
@@ -27,6 +32,27 @@ function cadastrar() {
     } else {
       setInterval(sumirMensagem, 1000);
     }
+
+     function analisarEmail() {
+    // Variável do campo email
+        var email = email_input.value
+        
+        if (!email.includes('@')) {
+            div_email.innerHTML = '<span style="color:red">Incluir @</span>'
+        } else {
+            div_email.innerHTML = '';
+        }
+
+        if (email == '') {
+            div_email.innerHTML= '';  
+        }
+    }
+
+
+
+
+
+
 
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
