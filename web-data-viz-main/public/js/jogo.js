@@ -2,7 +2,9 @@ var barra = 0
 var maxBarra = 100
 var tempo = 5
 var intervalo
-var jogo = false 
+var jogo = false;
+var forcaFinal = 0 
+
 
 var barraForca = document.getElementById("barraForca");
 var geral = document.getElementById("geral");
@@ -37,11 +39,13 @@ function atualizar(){
         }
     }
      function executarSoco() {
-  var forcaFinal = barra * 10;
+   forcaFinal = barra * 10;
   contador.innerHTML = "Força final: " + forcaFinal;
   luvaImg.src = "assets/imgs/imgluva.png";
   // alvoImg.src = "assets/imgs/alvo2.png";
   jogo = false
+
+  cadastrarBD()
 
 
 }
@@ -64,8 +68,26 @@ function atualizar(){
     }
   }, 1000); 
 
-        
     }
 
 geral.onclick = aumentarforca;
+
+function cadastrarBD(){
+    var forcaVar = forcaFinal;
+    var fkusuarioVar = sessionStorage.ID_USUARIO;
+    
+    fetch("/forca/inserir", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            fkusuarioServer: fkusuarioVar,  
+            forcaServer: forcaVar       
+        }),
+    });
+}
+
+
+
 
