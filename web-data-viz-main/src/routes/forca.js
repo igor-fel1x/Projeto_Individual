@@ -15,4 +15,8 @@ router.get("/buscarDadosGrafico/:idUsuario", function (req, res) {
     forcaController.buscarDadosGrafico(req, res);
 });
 
+router.get("/buscarUltimoIdjogo/:idUsuario", function (req, res) {
+    forcaController.buscarUltimoIdjogo(req, res);
+});
+
 module.exports = router;

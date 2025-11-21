@@ -1,5 +1,5 @@
 var barra = 0
-var maxBarra = 100
+var maxBarra = 250
 var tempo = 5
 var intervalo
 var jogo = false;
@@ -9,11 +9,6 @@ var forcaFinal = 0
 var barraForca = document.getElementById("barraForca");
 var geral = document.getElementById("geral");
 var contador = document.getElementById("contadorForca");
-var luvaImg = document.querySelector(".luva img");
-var alvoImg = document.querySelector(".alvo img");
-
-
- 
 
 function atualizar(){
     var porc = (barra/maxBarra) * 100 
@@ -41,9 +36,10 @@ function atualizar(){
      function executarSoco() {
    forcaFinal = barra * 10;
   contador.innerHTML = "Força final: " + forcaFinal;
-  luvaImg.src = "assets/imgs/imgluva.png";
-  // alvoImg.src = "assets/imgs/alvo2.png";
+  img_luva.src = "assets/imgs/imgluva.png";
+  img_alvo.src = "assets/imgs/alvo2.png";
   jogo = false
+
 
   cadastrarBD()
 
@@ -51,7 +47,7 @@ function atualizar(){
 }
 
     function iniciar(){
-        alvoImg.src = "assets/imgs/alvo.png";
+        img_alvo.src = "assets/imgs/alvo.png";
         barra = 0 
         tempo = 5
         contador.innerHTML = "Tempo: " + tempo + "s";
@@ -72,9 +68,13 @@ function atualizar(){
 
 geral.onclick = aumentarforca;
 
+var idUsuario = sessionStorage.ID_USUARIO;
+var fkjogo = 1
+
 function cadastrarBD(){
     var forcaVar = forcaFinal;
-    var fkusuarioVar = sessionStorage.ID_USUARIO;
+    var fkUsuarioVar = idUsuario;
+    var fkjogoVar = fkjogo
     
     fetch("/forca/inserir", {
         method: "POST",
@@ -82,7 +82,8 @@ function cadastrarBD(){
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            fkusuarioServer: fkusuarioVar,  
+            fkUsuarioServer: fkUsuarioVar,  
+            fkjogoServer: fkjogoVar,
             forcaServer: forcaVar       
         }),
     });
@@ -91,3 +92,23 @@ function cadastrarBD(){
 
 
 
+
+
+
+
+function buscarUltimoIdjogo() {
+    fetch(`/partida/ultimas/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
+        if (response.ok) {
+            response.json().then(function (resposta) {
+                console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                sessionStorage.ID_ULTIMO_JOGO = resposta[0].idPartida
+                console.log(resposta)
+            });
+        } else {
+            console.error('Nenhum dado encontrado ou erro na API');
+        }
+    })
+        .catch(function (error) {
+            console.error(`Erro na obtenção dos dados ${error.message}`);
+        });
+}
