@@ -42,23 +42,23 @@
     <div class="geral">
         <div class="kpi">
             <div class="cnt-kpi">
-                <p>MAIOR FORÇA</p>
-                <div class="num">
+                <p >MAIOR FORÇA</p>
+                <div id ="maiorForca">
                 </div>
             </div>
             <div class="cnt-kpi">
                 <p>MENOR FORÇA</p>
-                 <div class="num">
+                 <div id="menorForca">
                 </div>
             </div>
             <div class="cnt-kpi">
                 <p>  QTD DE TENTATIVAS </p>
-                 <div class="num">
+                 <div id="qtdTentativa">
                 </div>
             </div>
             <div class="cnt-kpi">
                 <p> MEDIA FORÇA</p>
-                 <div class="num">
+                 <div id="mediaForca">
                 </div>
             </div>
         </div>
@@ -82,7 +82,7 @@
 
 </html>
 <script>
-
+  
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
   
    function obterDados(){
@@ -166,5 +166,45 @@ function plotarGraficoBarra(dados){
 }
 
 
+function consultarDadosMaxForca(){
+  var idUsuario = sessionStorage.getItem("ID_USUARIO")
+  fetch('/forca/maxforca', {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: 
+    JSON.stringify({
+      idUsuarioServer: idUsuario
+    })
+  })
+  .then(function (resposta){
+    resposta.json()
+    .then(function (respostaConversao){
+      maiorForca.innerHTML = `
+      ${respostaConversao[0].maior_forca}
+      `
+      mediaForca.innerHTML = `
+      ${respostaConversao[0].media_forca}
+      `
+      qtdTentativa.innerHTML = `
+      ${respostaConversao[0].qtd_tentativas}
+      `
+      menorForca.innerHTML = `
+      ${respostaConversao[0].menor_forca}
+
+      `
+    }).catch(function (erroConversao){
+      console.log(erroConversao)
+    })
+  }).catch(function (erro){
+    console.log(erro)
+  })
+}
+window.onload = 
+consultarDadosMaxForca()
+plotarGraficoBarra()
+
 </script>
+
 

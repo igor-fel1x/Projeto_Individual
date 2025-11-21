@@ -6,7 +6,7 @@ function inserir(fkUsuario, forca) {
     
    return buscarUltimoIdjogo() // Busca o ID internamente
         .then(resultado => {
-            
+
             // ... (código de segurança omitido)
             const fkjogo = resultado[0].idjogo; // USA O ID BUSCADO
             
@@ -22,15 +22,16 @@ function inserir(fkUsuario, forca) {
         
 }
 
-function buscarDadosUsuario(idUsuario) {
+function buscarDadosMaxForca(idUsuario) {
     var instrucaoSql = `
         SELECT 
             MAX(forca) as maior_forca,
             MIN(forca) as menor_forca,
-            COUNT(forca) as qtd_tentativas,
-            ROUND(AVG(forca), 1) as media_forca
-        FROM resultado 
-        WHERE fkUsuario = ${idUsuario};
+            COUNT(dt) as qtd_tentativas,
+            AVG(forca) as media_forca
+        FROM resultado r join Usuario u on r.fkUsuario = u.idUsuario
+        where u.idUsuario = ${idUsuario}
+        ;
     `;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
@@ -66,6 +67,6 @@ function buscarUltimoIdjogo() {
 module.exports = {
     inserir,
     buscarDadosGrafico,
-    buscarDadosUsuario,
+    buscarDadosMaxForca,
     buscarUltimoIdjogo
 };

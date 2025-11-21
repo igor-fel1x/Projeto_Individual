@@ -1,32 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
-* {
+body {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body, html {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
+
+    /* background-color: rgb(12, 12, 12); */
 }
 
+/* :root {
+    --tamanho-header: 80px;
+    --tamanho-banner: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+    --tamanho-simulador: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+    --tamanho-login: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+    --tamanho-footer: 65px;
 
-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
+} */
 
-
-p, h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    padding: 0;
-    line-height: 1.2;
-}
 
 .container {
     display: flex;
@@ -35,20 +24,15 @@ p, h1, h2, h3, h4, h5, h6 {
     width: 100%;
     border-bottom: 2px solid red;
     background-color: rgb(16, 16, 16);
-    align-items: center;
-    padding: 0;
 }
 
 .container img {
     height: 60px;
-    display: block;
 }
 
 .navbar {
     align-items: center;
     height: 100%;
-    margin: 0;
-    padding: 0;
 }
 
 .navbar a {
@@ -56,27 +40,30 @@ p, h1, h2, h3, h4, h5, h6 {
     color: white;
 }
 
+
 .navbar {
     width: 30%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     list-style: none;
+    /* color: #e3b062; */
 }
 
 .titulo {
+    /* color: #32b9cd; */
     width: fit-content;
     font-weight: 500;
 }
 
+
 /* BANNER */
+
 .banner {
     display: flex;
     height: 100vh;
     justify-content: space-between;
-    background-color: rgb(16, 16, 16);
-    align-items: center;
-    overflow: hidden;
+     background-color: rgb(16, 16, 16);
 }
 
 .conteudo-home {
@@ -84,8 +71,6 @@ p, h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 0;
-    margin: 0;
 }
 
 .conteudo-home p {
@@ -94,7 +79,6 @@ p, h1, h2, h3, h4, h5, h6 {
     padding: 0;
     font-size: 3.8em;
     color: white;
-    line-height: 1.1;
 }
 
 .img-home {
@@ -102,12 +86,10 @@ p, h1, h2, h3, h4, h5, h6 {
     width: 80%;
 }
 
-.img-home img {
-    display: block;
-}
-
 /*  inicio arte marcial */
+
 .artemarcial {
+    /* background-color: orange; */
     width: 100%;
     height: 100vh;
 }
@@ -121,12 +103,15 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .conteudo-titulo {
-    text-align: center;
+     text-align: center;
+    /* background-color: white; */
     width: 40%;
     height: 55px;
     margin-bottom: 20px;
     font-weight: bold;
+    /* padding: 2px 3px; */
     border-radius: 4px;
+    /* border: 2px solid red; */
     color: black;
     font-size: 1.9em;
 }
@@ -136,9 +121,6 @@ p, h1, h2, h3, h4, h5, h6 {
     justify-content: space-between;
     flex-direction: row;
     width: 100%;
-    align-items: flex-start;
-    margin: 0;
-    padding: 0;
 }
 
 .geral2 {
@@ -146,9 +128,10 @@ p, h1, h2, h3, h4, h5, h6 {
     justify-content: space-between;
     flex-direction: row-reverse;
     width: 100%;
-    align-items: flex-start;
-    margin: 0;
-    padding: 0;
+    /* background-color: #ED145B; */
+    /* border-bottom: 6px solid black; */
+
+
 }
 
 .txt1-art,
@@ -156,9 +139,9 @@ p, h1, h2, h3, h4, h5, h6 {
     font-size: 1.8em;
     text-align: justify;
     width: 50%;
-    margin: 0 20px;
+    margin-left: 20px;
+    margin-right: 20px;
     color: black;
-    padding: 0;
 }
 
 .img1,
@@ -166,12 +149,12 @@ p, h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: center;
     width: 45%;
+    /* background-color: #32b9cd; */
 }
 
 .img2 img,
 .img1 img {
     height: 40vh;
-    display: block;
 }
 
 /* inicio jiu */
@@ -179,7 +162,7 @@ p, h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
     padding-top: 0;
     border-top: 4px solid red;
-    background-color: rgb(16, 16, 16);
+     background-color: rgb(16, 16, 16);
 }
 
 .titulo2 {
@@ -192,6 +175,9 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .conteudo-titulo2{
+    /* background-color: green; */
+    /* border: 2px solid red; */
+    /* background-color: white; */
     border-radius: 3px;
     width: 70%;
     height: 45px;
@@ -209,9 +195,7 @@ p, h1, h2, h3, h4, h5, h6 {
     justify-content: space-between;
     flex-direction: row;
     width: 100%;
-    align-items: flex-start;
-    margin: 0;
-    padding: 0;
+    /* background-color: #ED145B; */
 }
 
 .geral4 {
@@ -219,10 +203,10 @@ p, h1, h2, h3, h4, h5, h6 {
     justify-content: space-between;
     flex-direction: row-reverse;
     width: 100%;
+    /* background-color: #ED145B; */
     border-bottom: 4px solid red;
-    align-items: flex-start;
-    margin: 0;
-    padding: 0;
+
+
 }
 
 .txt1-jiu,
@@ -230,9 +214,9 @@ p, h1, h2, h3, h4, h5, h6 {
     font-size: 1.8em;
     text-align: justify;
     width: 50%;
-    margin: 0 20px;
+    margin-left: 20px;
+    margin-right: 20px;
     color: white;
-    padding: 0;
 }
 
 .img1-jiu,
@@ -241,56 +225,61 @@ p, h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     align-items: center;
     width: 45%;
+    /* background-color: #32b9cd; */
 }
 
 .img2-jiu img,
 .img1-jiu img {
     height: 40vh;
     margin-bottom: 40px;
-    display: block;
 }
 
 /* inicio beneficios e valores */
+
 .geralbox {
     border-top: 4px solid black;
+    /* background-color: green; */
     display: flex; 
     flex-direction: row; 
     align-items: center;
     justify-content: space-between; 
+    /* gap: 80px;  */
     width: 100%;
     height: 90vh;
     border-bottom: 4px solid black;
-    margin: 0;
-    padding: 0;
 }
-
 .coluna-beneficios{
+    /* background-color: orange; */
     width: 50%; 
     display: flex;
     flex-direction: column; 
     align-items: center; 
+    
 }
-
-.coluna-valores{
-    display: flex;
-    width: 50%;
+ .coluna-valores{
+     display: flex;
+     /* background-color: red; */
+     width: 50%;
     flex-direction: column; 
     align-items: center; 
-}
+  
+ }
 
-.coluna-beneficios p,
-.coluna-valores p{
-    font-weight: bold;
-} 
-
+ .coluna-beneficios p,
+ .coluna-valores p{
+     font-weight: bold;
+ } 
 .beneficios, .valores {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+    /* background-color: #ED145B; */
     width: 46%;
+
 }
 
 .conteudotitulo3, .conteudotitulo4{
+    /* background-color: rgb(81, 0, 128);  */
     border: 3px solid red;
     background-color: black;
     color: white;
@@ -300,8 +289,9 @@ p, h1, h2, h3, h4, h5, h6 {
     text-align: center;
     align-items: center;
     font-size: 1.2em;
+    
+    
 }
-
 .boxes, .boxes1{
     display: flex;
     align-items: center;
@@ -312,44 +302,45 @@ p, h1, h2, h3, h4, h5, h6 {
     width: 80%;
 }
 
-.box1, .box1-valores{
+
+ .box1, .box1-valores{
     display: flex;
     justify-content: space-around;
     flex-direction: row;
     width: 100%;
     margin-bottom: 10px;
     gap: 20px;
-}
+ }
 
-.beneficios1, .beneficios1-valores{
+ .beneficios1, .beneficios1-valores{
+    /* background-color: purple; */
     height: 120px;
     width: 48%;
-}
-
-.conteudo-beneficios, .conteudo-valores{
+ }
+ .conteudo-beneficios, .conteudo-valores{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+     gap: 10px;
     width: 100%;
     height: 50px;
     background-color: white;
     border: 2px solid black;
     border-radius: 4px;
-}
+ }
 
-.beneficios1 img, .beneficios1-valores img{
+ .beneficios1 img, .beneficios1-valores img{
     height: 40px;
-    display: block;
-}
+ }
 
-/* inicio federacoes */
-.federacoes {
-    background-color: rgb(16, 16, 16); 
+ /* inicio federçoes */
+
+ .federacoes {
+     background-color: rgb(16, 16, 16); 
     width: 100%;
     height: 100%;
     border-top: 4px solid red;
-}
+    }
 
 .titulo-federacoes {
     display: flex;
@@ -361,11 +352,14 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .conteudo-federacao {
     text-align: center;
+    /* background-color: white; */
     width: 40%;
     height: 55px;
     margin-bottom: 20px;
     font-weight: bold;
+    /* padding: 2px 3px; */
     border-radius: 4px;
+    /* border: 2px solid red; */
     color: white;
     font-size: 1.9em;
 }
@@ -377,7 +371,6 @@ p, h1, h2, h3, h4, h5, h6 {
     margin-bottom: 50px;
     margin-top: 50px;
     width: 100%;
-    align-items: flex-start;
 }
 
 .geral2-federacao {
@@ -386,7 +379,10 @@ p, h1, h2, h3, h4, h5, h6 {
     flex-direction: row-reverse;
     width: 100%;
     margin-top: 50px;
-    align-items: flex-start;
+    width: 100%;
+    /* margin-bottom: 20px; */
+
+
 }
 
 .txt1-federacao,
@@ -397,10 +393,10 @@ p, h1, h2, h3, h4, h5, h6 {
     font-size: 1.4em;
     text-align: left;
     width: 50%;
-    margin: 0 20px;
+    margin-left: 20px;
+    margin-right: 20px;
     color: white;
 }
-
 .txt1-federacao p, .txt2-federacao p {
     width: 90%; 
     text-align: left;
@@ -411,6 +407,7 @@ p, h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: center;
     width: 45%;
+    /* background-color: #32b9cd; */
 }
 
 .ibjjf img,
@@ -418,15 +415,15 @@ p, h1, h2, h3, h4, h5, h6 {
     height: 40vh;
     border-radius: 50%;
     margin-bottom: 20px;
-    display: block;
 }
 
 /* inicio grandes nomes */
 .nomes {
-    background-color: white; 
+    background-color: white;
     width: 100%;
-    height: auto;
+    height: 70vh;
     border-top: 4px solid red;
+    /* margin-bottom: 40px; */
 }
 
 .titulo-nomes {
@@ -438,12 +435,15 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .conteudo-nomes {
-    text-align: center;
+     text-align: center;
+    /* background-color: white; */
     width: 40%;
     height: 55px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     font-weight: bold;
+    /* padding: 2px 3px; */
     border-radius: 4px;
+    /* border: 2px solid red; */
     color: black;
     font-size: 1.9em;
 }
@@ -454,9 +454,7 @@ p, h1, h2, h3, h4, h5, h6 {
     flex-direction: row-reverse;
     margin-top: 50px;
     width: 100%;
-    align-items: flex-start;
 }
-
 .txt1-nomes {
     display: flex;
     flex-direction: column;
@@ -464,27 +462,32 @@ p, h1, h2, h3, h4, h5, h6 {
     font-size: 1.4em;
     text-align: left;
     width: 50%;
-    margin: 0 20px;
+    margin-left: 20px;
+    margin-right: 20px;
     color: black;
 }
+.nome {
+    display: flex;
+    justify-content: center;
+    width: 45%;
+    /* background-color: #32b9cd; */
+}
 
-.nomes img {
+.nome img {
     height: 40vh;
     width: auto;
     border-radius: 20px;
-
 }
 
 /* inicio jogo */
+
 .jogo {
     display: flex;
     height: 70vh;
     justify-content: space-between;
     border-top: 4px solid red;
-    background-color: rgb(16, 16, 16);
+      background-color: rgb(16, 16, 16);
     align-items: center;
-    margin: 0;
-    padding: 0;
 }
 
 .conteudo-jogo {
@@ -494,6 +497,7 @@ p, h1, h2, h3, h4, h5, h6 {
     align-items: center;
     width: 80%;
     gap: 30px; 
+    /* background-color: #32b9cd; */
 }
 
 .conteudo-jogo p {
@@ -503,7 +507,9 @@ p, h1, h2, h3, h4, h5, h6 {
     font-size: 1.7em;
     color: white;
     text-align: center;
+    /* font-weight: bold;  */
 }
+
 
 .conteudo-jogo button {
     background-color: red;
@@ -521,21 +527,31 @@ p, h1, h2, h3, h4, h5, h6 {
     align-items: center;
     justify-content: center;
     width: 50%;
+    /* background-color: #32b9cd; */
 }
 
-.img-jogo img{
-    width: 80%;
-    height: auto;
-    border-radius: 2px;
-    display: block;
-}
+    .img-jogo img{
+         width: 80%;       /* Valor menor */
+        height: auto;
+        border-radius: 2px;
+    }
 
-/* inicio muay thai */
+
+
+
+
+    /* inicio muay thai */
+
+
+
+
+
 .muaythai {
     margin-top: 0;
     padding-top: 0;
     border-top: 4px solid red;
-    background-color: rgb(253, 249, 249);
+     background-color: rgb(253, 249, 249);
+     
 }
 
 .titulom {
@@ -548,6 +564,9 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .conteudo-titulom{
+    /* background-color: green; */
+    /* border: 2px solid red; */
+    /* background-color: white; */
     border-radius: 3px;
     width: 70%;
     height: 45px;
@@ -565,9 +584,7 @@ p, h1, h2, h3, h4, h5, h6 {
     justify-content: space-between;
     flex-direction: row;
     width: 100%;
-    align-items: flex-start;
-    margin: 0;
-    padding: 0;
+    /* background-color: #ED145B; */
 }
 
 .geral4m {
@@ -575,10 +592,10 @@ p, h1, h2, h3, h4, h5, h6 {
     justify-content: space-between;
     flex-direction: row-reverse;
     width: 100%;
+    /* background-color: #ED145B; */
     border-bottom: 4px solid red;
-    align-items: flex-start;
-    margin: 0;
-    padding: 0;
+
+
 }
 
 .txt1-thai,
@@ -586,9 +603,9 @@ p, h1, h2, h3, h4, h5, h6 {
     font-size: 1.6em;
     text-align: justify;
     width: 50%;
-    margin: 0 20px;
+    margin-left: 20px;
+    margin-right: 20px;
     color: black;
-    padding: 0;
 }
 
 .img1-thai,
@@ -597,54 +614,57 @@ p, h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     align-items: center;
     width: 45%;
+    /* background-color: #32b9cd; */
 }
 
 .img2-thai img,
 .img1-thai img {
     height: 40vh;
     margin-bottom: 40px;
-    display: block;
 }
 
-/* inicio beneficios e valores muay thai */
+/* inicio beneficios e valores */
+
 .geralboxm {
     border-top: 4px solid red;
-    background-color: rgb(16,16, 16);
+  background-color: rgb(16,16, 16);
     display: flex; 
     flex-direction: row; 
     align-items: center;
     justify-content: space-between; 
+    /* gap: 80px;  */
     width: 100%;
     height: 90vh;
     border-bottom: 4px solid red;
-    margin: 0;
-    padding: 0;
 }
-
 .coluna-beneficiosm{
+    /* background-color: orange; */
     width: 50%; 
     display: flex;
     flex-direction: column; 
     align-items: center; 
+    
 }
-
-.coluna-valoresm{
-    display: flex;
-    width: 50%;
+ .coluna-valoresm{
+     display: flex;
+     /* background-color: red; */
+     width: 50%;
     flex-direction: column; 
     align-items: center; 
-}
+  
+ }
 
-.coluna-beneficiosm p,
-.coluna-valoresm p{
-    font-weight: bold;
-} 
-
+ .coluna-beneficiosm p,
+ .coluna-valoresm p{
+     font-weight: bold;
+ } 
 .beneficiosm, .valoresm {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+    /* background-color: #ED145B; */
     width: 46%;
+
 }
 
 .conteudotitulo3m, .conteudotitulo4m{
@@ -655,9 +675,11 @@ p, h1, h2, h3, h4, h5, h6 {
     height: 30px;
     width: 90%;
     text-align: center;
+    /* align-items: center; */
     font-size: 1.2em;
+    
+    
 }
-
 .boxesm, .boxes1m{
     display: flex;
     align-items: center;
@@ -668,44 +690,45 @@ p, h1, h2, h3, h4, h5, h6 {
     width: 80%;
 }
 
-.box1m, .box1-valoresm{
+
+ .box1m, .box1-valoresm{
     display: flex;
     justify-content: space-around;
     flex-direction: row;
     width: 100%;
     margin-bottom: 10px;
     gap: 20px;
-}
+ }
 
-.beneficios1m, .beneficios1-valoresm{
+ .beneficios1m, .beneficios1-valoresm{
+    /* background-color: purple; */
     height: 120px;
     width: 48%;
-}
-
-.conteudo-beneficiosm, .conteudo-valoresm{
+ }
+ .conteudo-beneficiosm, .conteudo-valoresm{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+     gap: 10px;
     width: 100%;
     height: 50px;
     background-color: white;
     border: 3px solid red;
     border-radius: 4px;
-}
+ }
 
-.beneficios1m img, .beneficios1m-valoresm img{
+ .beneficios1m img, .beneficios1m-valoresm img{
     height: 40px;
-    display: block;
-}
+ }
 
-/* inicio federacoes muay thai */
-.federacoesm {
-    background-color: rgb(255, 255, 255); 
+ /* inicio federçoes */
+
+ .federacoesm {
+     background-color: rgb(255, 255, 255); 
     width: 100%;
     height: 100%;
     border-top: 4px solid red;
-}
+    }
 
 .titulo-federacoesm {
     display: flex;
@@ -717,11 +740,14 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .conteudo-federacaom {
     text-align: center;
+    /* background-color: white; */
     width: 40%;
     height: 55px;
     margin-bottom: 20px;
     font-weight: bold;
+    /* padding: 2px 3px; */
     border-radius: 4px;
+    /* border: 2px solid red; */
     color: black;
     font-size: 1.9em;
 }
@@ -733,7 +759,6 @@ p, h1, h2, h3, h4, h5, h6 {
     margin-bottom: 50px;
     margin-top: 50px;
     width: 100%;
-    align-items: flex-start;
 }
 
 .geral2-federacaom {
@@ -742,7 +767,10 @@ p, h1, h2, h3, h4, h5, h6 {
     flex-direction: row-reverse;
     width: 100%;
     margin-top: 50px;
-    align-items: flex-start;
+    width: 100%;
+    /* margin-bottom: 20px; */
+
+
 }
 
 .txt1-federacaom,
@@ -753,10 +781,10 @@ p, h1, h2, h3, h4, h5, h6 {
     font-size: 1.4em;
     text-align: left;
     width: 50%;
-    margin: 0 20px;
+    margin-left: 20px;
+    margin-right: 20px;
     color: black;
 }
-
 .txt1-federacaom p, .txt2-federacaom p {
     width: 90%; 
     text-align: left;
@@ -767,6 +795,7 @@ p, h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: center;
     width: 45%;
+    /* background-color: #32b9cd; */
 }
 
 .wmo img,
@@ -774,19 +803,18 @@ p, h1, h2, h3, h4, h5, h6 {
     height: 40vh;
     border-radius: 50%;
     margin-bottom: 20px;
-    display: block;
 }
 
-/* inicio grandes nomes muay thai */
-.nomes {
-    background-color: black; 
+/* inicio grandes nomes */
+.nomesm {
+     background-color: black; 
     width: 100%;
     height: 70vh;
     border-top: 4px solid red;
-    margin-bottom: 40px;
-}
+    /* margin-bottom: 40px; */
+    }
 
-.titulo-nomes {
+.titulo-nomesm {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -794,51 +822,74 @@ p, h1, h2, h3, h4, h5, h6 {
     width: 99%;
 }
 
-.conteudo-nomes {
-    text-align: center;
+.conteudo-nomesm {
+     text-align: center;
+    /* background-color: white; */
     width: 40%;
     height: 55px;
     margin-bottom: 20px;
     font-weight: bold;
+    /* padding: 2px 3px; */
     border-radius: 4px;
+    /* border: 2px solid red; */
     color: white;
     font-size: 1.9em;
 }
 
-.geral1-nomes {
+.geral1-nomesm {
     display: flex;
     justify-content: space-around;
     flex-direction: row-reverse;
     margin-top: 50px;
     width: 100%;
-    align-items: flex-start;
 }
-
-.txt1-nomes {
+.txt1-nomesm {
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 1.4em;
     text-align: left;
     width: 50%;
-    margin: 0 20px;
+    margin-left: 20px;
+    margin-right: 20px;
     color: white;
 }
-
 .nome {
     display: flex;
     justify-content: center;
     width: 45%;
+    /* background-color: #32b9cd; */
 }
 
 .nome img {
     height: 40vh;
     width: auto;
     border-radius: 20px;
-    display: block;
 }
 
-/* FOOTER e outras seções mantidas */
+
+/* FOOTER */
+
+/* .footer { */
+    /* background-color: #32b9cd; */
+    /* height: 150px;
+    color: #fff;
+    display: flex;
+    font-size: 15px; */
+
+
+/* .footer .container {
+    justify-content: center;
+    text-align: center;
+} */
+/* 
+.footer .container .version {
+    font-size: 12px;
+} */
+
+
+/* LOGIN */
+
 .login {
     height: var(--tamanho-login);
     background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
@@ -914,6 +965,7 @@ p, h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     font-size: 18px;
     color: #fff;
+    /* background-color: #ED145B; */
     width: 120px;
     height: 30px;
     align-self: center;
@@ -933,6 +985,8 @@ p, h1, h2, h3, h4, h5, h6 {
 #div_erros_login {
     display: none
 }
+
+/* FORMULARIO */
 
 .alerta_erro {
     display: flex;
@@ -982,6 +1036,7 @@ input {
     font-size: 18px;
     padding: 10px 15px;
     color: white;
+    /* background-color: #ED145B; */
     width: 120px;
     align-self: center;
     margin-top: 5px;
@@ -998,6 +1053,8 @@ input {
     width: 50px;
 }
 
+/* SIMULADOR */
+
 .simulador {
     color: white;
 }
@@ -1007,6 +1064,8 @@ input {
     overflow: scroll;
     height: var(--tamanho-simulador);
 }
+
+/* ALERTA */
 
 #alerta {
     position: absolute;

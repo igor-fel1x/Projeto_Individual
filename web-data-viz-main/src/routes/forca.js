@@ -1,6 +1,5 @@
 var express = require("express");
 var router = express.Router();
-
 var forcaController = require("../controllers/forcaController");
 
 router.post("/inserir", function (req, res) {

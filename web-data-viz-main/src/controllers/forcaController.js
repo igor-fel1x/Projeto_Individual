@@ -26,22 +26,14 @@ function inserir(req, res) {
     }
 } 
 
-function buscarDadosUsuario(req, res) {
-    var idUsuario = req.params.idUsuario;
-
-    forcaModel.buscarDadosUsuario(idUsuario)
-        .then(function (resultado) {
-            res.json(resultado[0] || {
-                maior_forca: 0,
-                menor_forca: 0,
-                qtd_tentativas: 0,
-                media_forca: 0
-            });
-        })
-        .catch(function (erro) {
-            console.log(erro);
-            res.status(500).send("Erro no servidor");
-        });
+function buscarDadosMaiorForca(req, res) {
+    var idUsuario = req.body.idUsuarioServer;
+    forcaModel.buscarDadosMaxForca(idUsuario)
+    .then(function (resposta){
+        res.send(resposta).status(200)
+    }).catch(function(erro){
+        res.send(erro).status(500)
+    })
 }
 
 function buscarDadosGrafico(req, res) {
@@ -74,6 +66,6 @@ function buscarUltimoIdjogo() {
 module.exports = {
     inserir,
     buscarDadosGrafico,
-    buscarDadosUsuario,
+    buscarDadosMaiorForca,
     buscarUltimoIdjogo
 };
