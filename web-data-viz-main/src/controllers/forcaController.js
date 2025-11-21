@@ -1,57 +1,47 @@
 var forcaModel = require("../models/forcaModel");
 
-
 function inserir(req, res) {
-    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    console.log('Função inserir foi chamada!');
     var fkUsuario = req.body.fkUsuarioServer;
+    // var fkjogo = req.body.fkjogoServer;
     var forca = req.body.forcaServer;
 
     console.log(fkUsuario)
     console.log(forca)
-   
 
-    // Faça as validações dos valores
     if (fkUsuario == undefined) {
         res.status(400).send("Seu fkUsuario está undefined!");
     } else if (forca == undefined) {
         res.status(400).send("Seu forca está undefined!");
-    }else {
-
-        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+    } else {
         forcaModel.inserir(fkUsuario, forca)
-            .then(
-                function (resultado) {
-                    res.json(resultado);
-                }
-            ).catch(
-                function (erro) {
-                    console.log(erro);
-                    console.log(
-                        "\nHouve um erro ao realizar o Inserir! Erro: ",
-                        erro.sqlMessage
-                    );
-                    res.status(500).json(erro.sqlMessage);
-                }
-            );
+            .then(function (resultado) {
+                res.json(resultado);
+            })
+            .catch(function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao realizar o Inserir! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            });
     }
-}
+} 
+
 function buscarDadosUsuario(req, res) {
     var idUsuario = req.params.idUsuario;
 
     forcaModel.buscarDadosUsuario(idUsuario)
-    .then(function (resultado) {
-        // Se tiver dados, envia o primeiro registro
-        res.json(resultado[0] || {
-            maior_forca: 0,
-            menor_forca: 0, 
-            qtd_tentativas: 0,
-            media_forca: 0
+        .then(function (resultado) {
+            res.json(resultado[0] || {
+                maior_forca: 0,
+                menor_forca: 0,
+                qtd_tentativas: 0,
+                media_forca: 0
+            });
+        })
+        .catch(function (erro) {
+            console.log(erro);
+            res.status(500).send("Erro no servidor");
         });
-    })
-    .catch(function (erro) {
-        console.log(erro);
-        res.status(500).send("Erro no servidor");
-    });
 }
 
 function buscarDadosGrafico(req, res) {
@@ -70,26 +60,20 @@ function buscarDadosGrafico(req, res) {
 }
 
 function buscarUltimoIdjogo() {
-    forcaModel.buscarUltimoIdjogo(idUsuario).then(function (resultado) {
-        if (response.ok) {
-            response.json().then(function (resultado) {
-                console.log(`Dados recebidos: ${JSON.stringify(resultado)}`);
-                sessionStorage.ID_ULTIMA_PARTIDA = resultado[0].idPartida
-                console.log(resultado)
-            });
-        } else {
-            console.error('Nenhum dado encontrado ou erro na API');
-        }
-    })
+    forcaModel.buscarUltimoIdjogo() 
+        .then(function (resultado) {
+            // Apenas retorna o resultado do DB
+            res.status(200).json(resultado); 
+        })
         .catch(function (error) {
-            console.error(`Erro na obtenção dos dados ${error.message}`);
+            console.error(`Erro ao buscar último ID: ${error.message}`);
+            res.status(500).send("Erro interno ao buscar o último ID do jogo.");
         });
 }
 
-
 module.exports = {
-    inserir, 
-    buscarDadosGrafico, 
-    buscarDadosUsuario, 
+    inserir,
+    buscarDadosGrafico,
+    buscarDadosUsuario,
     buscarUltimoIdjogo
-}
+};
