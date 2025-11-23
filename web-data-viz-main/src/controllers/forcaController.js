@@ -37,9 +37,9 @@ function buscarDadosMaiorForca(req, res) {
 }
 
 function buscarDadosGrafico(req, res) {
-    var idUsuario = req.params.idUsuario;
-
+    var idUsuario = req.params.idUsuarioServer;
     forcaModel.buscarDadosGrafico(idUsuario).then(function (resultado) {
+         console.log('Dados enviados para front-end:', resultado); 
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {

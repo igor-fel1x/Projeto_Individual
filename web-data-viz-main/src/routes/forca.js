@@ -10,10 +10,6 @@ router.get("/buscarDadosUsuario/:idUsuario", function (req, res) {
     forcaController.buscarDadosUsuario(req, res);
 });
 
-router.get("/buscarDadosGrafico/:idUsuario", function (req, res) {
-    forcaController.buscarDadosGrafico(req, res);
-});
-
 router.get("/buscarUltimoIdjogo/:idUsuario", function (req, res) {
     forcaController.buscarUltimoIdjogo(req, res);
 });

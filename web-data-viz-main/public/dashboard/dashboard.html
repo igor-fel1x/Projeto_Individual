@@ -27,13 +27,11 @@
 
 <!-- <body onload=" atualizarFeed()"> -->
 
-<body  onload="obterDados()"></body> <!-- Chamando a função obterDados ao carregar a página -->
-  
 
 
     <div class=" navbar">
         <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-        <p>Voltar</p>
+        <p> <a href="../index.html">Voltar </a></p>
     </div>
 
      <div class="hello">
@@ -85,74 +83,37 @@
   
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
   
-   function obterDados(){
-  // Aqui seria a função que obteria os dados do banco de dados
-  // No caso, aqui você colocaria o fetch que teria o endereço da sua rota que você criou na pasta /routes e chamaria a função plotarGraficoLinha nessa função. Exemplo:
- 
-  // fetch('/obterDados')
-  // .then(function(response){
-  //   return response.json();
-  // })
-  // .then(function(data){
-  //   plotarGraficoLinha(data);
-  //   plotarGraficoBarra(data);
-  // })
-  // .catch(function(err){
-  //   console.log(err);
-  // })
+ function buscarDadosGrafico() {
+    var ctx = document.getElementById('barra').getContext('2d');
+    var idUsuario = sessionStorage.getItem("ID_USUARIO")
 
-  // Como eu não configurei as rotas, eu criei um array com os dados para simular a obtenção dos dados
-  var dados = [{
-    jogador:'Endrick',
-    votos: 10
-  },
-  {
-    jogador:'João',
-    votos: 5
-  },
-  {
-    jogador:'Maria',
-    votos: 15
-  },
-  {
-    jogador:'José',
-    votos: 20
-  },
-  {
-    jogador:'Pedro',
-    votos: 25
-  },
-  {
-    jogador:'Ana',
-    votos: 30
-  }]
+    fetch(`/forca/buscarDadosGrafico/${idUsuario}`)
+            .then(function(resposta) {
+            return resposta.json(); // Converte a resposta para JSON
+        })
 
-  // Chamando a função para plotar o gráfico de barra com os dados
-  plotarGraficoBarra(dados)
-}
+        .then(function(resposta) {
+            var forcas = [];
+            var tentativas = [];
 
-// Função para plotar o gráfico de linha
-function plotarGraficoBarra(dados){
-
-  var votos = [];
-  var jogadores = [];
-
-  // Preenchendo os arrays com os dados
-  for(var i = 0; i < dados.length; i++){
-    votos.push(dados[i].votos);
-    jogadores.push(dados[i].jogador);
-  }
-
-  // Capturando o elemento canvas pelo id 
-  var ctx = document.getElementById('barra').getContext('2d');
+            // Se vierem dados do banco
+            for(var i = 0; i < resposta.length; i++){
+                forcas.push(resposta[i].forca);          // Valores do eixo Y
+                tentativas.push((i + 1)); // Rótulos do eixo X
+            }
+            if (resposta.length === 0) {
+                forcas = [0];
+                tentativas = ['Sem dados'];
+            }
+  
   // Criando o gráfico de barra usando o Chart.js
   var myChart = new Chart(ctx, {
       type: 'bar', // Tipo de gráfico: barra
       data: { // Dados para o gráfico
-          labels: jogadores, // Rótulos no eixo X
+          labels: tentativas, // Rótulos no eixo X
           datasets: [{
-              label: 'Votos', // Nome do conjunto de dados
-              data: votos, // Dados dos votos
+              label: 'Força (N)', // Nome do conjunto de dados
+              data: forcas, // Dados dos votos
               backgroundColor: [
                   ' rgb(175, 19, 19)', // Cor de fundo das barras
               ],
@@ -161,10 +122,44 @@ function plotarGraficoBarra(dados){
               ],
               borderWidth: 2 // Largura da borda das barras
           }]
-      },  
-  });
-}
+      },
+         options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            suggestedMin: 0,    // Valor mínimo
+                            suggestedMax: 1000, // Valor máximo
+                            ticks: {
+                                stepSize: 100   // Intervalo de 100 em 100
+                            },
+                            title: {
+                                display: true,
+                                text: 'Força (N)'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Tentativas'
+                            },
+                            ticks: {
+                                callback: function(value) {
+                                    return value; // Mostra só o número
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+    })  .catch(function(erro) {
+                console.log('Erro ao carregar gráfico:', erro);      
+            });
+  }
 
+
+  // Capturando o elemento canvas pelo id 
+ 
 
 function consultarDadosMaxForca(){
   var idUsuario = sessionStorage.getItem("ID_USUARIO")
@@ -203,7 +198,7 @@ function consultarDadosMaxForca(){
 }
 window.onload = 
 consultarDadosMaxForca()
-plotarGraficoBarra()
+buscarDadosGrafico()
 
 </script>
 

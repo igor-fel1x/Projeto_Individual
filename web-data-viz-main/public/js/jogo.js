@@ -6,6 +6,9 @@ var jogo = false;
 var forcaFinal = 0 
 
 
+janela.style.display='none'
+b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
 var barraForca = document.getElementById("barraForca");
 var geral = document.getElementById("geral");
 var contador = document.getElementById("contadorForca");
@@ -42,6 +45,7 @@ function atualizar(){
 
 
   cadastrarBD()
+  janela.style.display='block'
 
 
 }

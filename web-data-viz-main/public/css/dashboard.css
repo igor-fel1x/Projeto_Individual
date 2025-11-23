@@ -96,3 +96,5 @@ div:has(canvas) {
     height: 400px; 
    filter: drop-shadow(-8px 4px 10px red);
 }
+
+

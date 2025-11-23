@@ -1,63 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
     <link rel="stylesheet" href="./css/login.css">
-    <script src="./js/sessao.js"></script>
 </head>
-
 <body>
-
-    <div class=" navbar">
+    <div class="navbar">
         <img src="assets/imgs/Design_sem_nome__1_-removebg-preview.png" alt="">
     </div>
 
-
     <div class="geral">
         <div class="boxCadastro">
-            <div class=" geralInput">
+            <div class="geralInput">
                 <div class="inputsBox1">
-                    <div class="conteudobox">
                     <div class="titulo">
-                        <h4> Login</h4>
+                        <h4>Login</h4>
                     </div>
-                    
-                    <input type="text" id="input_email" placeholder="Email"> <br>
 
-                    <input type="text" id="input_senha" placeholder="Senha"> <br>
+                    <input type="text" id="input_email" placeholder="Email"> <br>
+                    <input type="password" id="input_senha" placeholder="Senha"> <br>
                     
                     <div class="botao">
-                        <button onclick="entrar()">Enviar Dados</button>
+                        <button onclick="entrar()">Entrar</button>
                     </div>
+
+                    <div class="card_erro" id="cardErro">
+                        <span id="mensagem_erro"></span>
+                    </div>
+
                     <div id="div_aguardar" class="loading-div">
-                        <img src="./assets/circle-loading.gif" height="100px" id="loading-gif">
-                    </div>
+                        <!-- <img src="./assets/circle-loading.gif" height="100px" id="loading-gif"> -->
                     </div>
                 </div>
             </div>
+            
             <div class="geral2">
                 <div class="txt1">
-                    <a> <br>Faça seu login!</a>
+                    <a>Faça seu login e entre no mundo das artes marciais!</a>
                 </div>
                 <div class="img-box">
-                    <video width="300px" autoplay loop muted playsinline>
-                        <source src="assets/imgs/charles.mp4" type="video/mp4">
+                    <video height="180px" width="300px" autoplay loop muted playsinline class="video1" id="video1">
+                        <source src="assets/imgs/spider.mp4" type="video/mp4">
                         Seu navegador não suporta a tag de vídeo.
                     </video>
-                    <div class="card_erro" id="cardErro">
-                        <div id="div_erros_login"></div>
-                        <span id="mensagem_erro"></span>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="js/sessao.js"></script>
+    <script src="js/login.js"></script>
 </body>
-
 </html>
-
-<script src="js/sessao.js"></script>
-<script src="js/login.js"></script>

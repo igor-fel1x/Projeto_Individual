@@ -1,154 +1,164 @@
-body{
+body {
     margin: 0;
+    background-color: #0c0c0c;
+    font-family: 'Arial', sans-serif;
 }
 
-.navbar{
+.navbar {
     display: flex;
     background-color: white;
     height: 54px;
-    width: auto;
     border-bottom: 3px solid red;
-    margin-top: 0;
 }
 
-.navbar img{
+.navbar img {
     height: 58px;
-    /* height: 88px; */
 }
 
-
-.geral{
+.geral {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 91vh;
-    background-color: rgb(12, 12, 12);
-    
-    /* background-image: url(assets/imagens/istockphoto-1070557648-612x612.jpg); */
-    background-size: cover;
+    height: calc(100vh - 54px);
+    background-color: #0c0c0c;
 }
 
-.titulo{
+.boxCadastro {
     display: flex;
+    width: 90%;
+    max-width: 1200px;
+    height: 78vh;
+    flex-direction: row-reverse;
     justify-content: center;
-    /* align-self: center; */
 }
 
-.titulo h4{
+.geralInput {
+    display: flex;
+    background-color: #000000;
+    border: 2px solid white;
+    border-left: 0;
+    height: 100%;
+    width: 60%;
+    border-radius: 3px;
+    box-shadow: 0 4px 15px rgba(214, 26, 26, 0.4);
+    align-items: center;
+    justify-content: center;
+}
+
+.inputsBox1 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 80%;
+    height: auto;
+    align-items: center;
+}
+
+.titulo h4 {
     color: white;
     background-color: black;
     border: 2px solid red;
-    padding: 10px 20px;
+    padding: 12px 25px;
     border-radius: 8px;
     font-size: 1.3em;
-
+    margin: 0 0 20px 0;
 }
 
-
-.boxCadastro{
-    display: flex;
-    /* padding: 30px 15px; */
-    width: 90%;
-    height: 78vh;
-    /* background-color: rgb(14, 13, 13); */
-    flex-direction: row-reverse;
-    justify-content: center;
-     /* background-color: white; */
-    /* border-radius: 6px; */
-    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 25px, rgba(0, 0, 0, 0.12) 0px 0px 25px, rgba(0, 0, 0, 0.12) 0px 0px 25px, rgba(0, 0, 0, 0.17) 0px 0px 25px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
-}
-
-
-.inputsBox1{
-    display: flex;
-    flex-direction: column;
-    /* background-color: aqua; */
-    gap: 3px;
+.inputsBox1 input {
+    padding: 12px;
     width: 100%;
-    height: 100px;
-    margin-left: 30px;  
-    align-items: center;
-}
-.geralInput{
-    display: flex;
-    background-color: #000000;
-    /* border: 1px solid rgb(255, 0, 0); */
-    border-left: 0;
-    border: 2px solid white;
-    height: 100%;
-    width:60%;
-    border-radius: 3px;
-    box-shadow: 10px 4px 25px rgba(214, 26, 26, 0.7);
-
-    
-}
-
-.inputsBox1 input{
-    /* height: 80px; */
-    padding: 8px;
-    width: 65%;
     border-radius: 5px;
     border: 2px solid red;
-}
-
-.inputsBox1 span {
+    background-color: #1a1a1a;
     color: white;
-    
+    font-size: 1em;
+    box-sizing: border-box;
 }
 
-.geral2{
+.inputsBox1 input::placeholder {
+    color: #ccc;
+}
+
+.inputsBox1 input:focus {
+    outline: none;
+    border-color: #ff4444;
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.3);
+}
+
+.botao {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.botao button {
+    color: white;
+    background-color: red;
+    border: 2px solid black;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 200px;
+}
+
+.botao button:hover {
+    background-color: #cc0000;
+    transform: translateY(-2px);
+}
+
+.geral2 {
     display: flex;
     background-color: #000000;
     border: 2px solid white;
     border-right: 0;
-    height: 100%;
-    width:30%;
+    height: 71.6vh;
+    width: 40%;
     border-radius: 3px;
     align-items: center;
-    justify-content: space-evenly;
-    box-shadow: 10px 4px 25px rgba(214, 26, 26, 0.7);
+    justify-content: center;
     flex-direction: column;
-    /* gap: 4px; */
-
+    box-shadow: 0 4px 15px rgba(214, 26, 26, 0.4);
+    gap: 30px;
+    padding: 20px;
 }
 
-.img-box{
-    width: auto;
-    /* background-color: aqua ; */
-}
-
-.img-box video{
-    height: 220px;
-    border-radius: 6px;
-    width: 400px;
-    /* background-color: orange; */
-}
-.txt1{
-    display: flex;
-    flex-direction: column;
-    /* background-color: blueviolet; */
-    height: 40%;
-    width: 78%;
-    
-}
-.txt1 a{
+.txt1 a {
     color: white;
-    font-size: 2.4em;
-    align-self: flex-start;
+    font-size: 1.8em;
+    text-align: center;
+    line-height: 1.4;
 }
 
-.botao{
+.img-box {
     display: flex;
     justify-content: center;
-    width: 50%;
-    align-self: flex-end;
-    /* background-color: purple; */
+    align-items: center;
 }
 
-.botao button{
-    color: white;
-    background-color: red;
-    border: 2px solid rgb(2, 2, 2);
-    padding: 7px 8px;
-    border-radius: 8px;
+.img-box video {
+    height: 200px;
+    border-radius: 6px;
+    max-width: 100%;
+}
+
+.loading-div {
+    display: none;
+    text-align: center;
+}
+
+#cardErro, #mensagem_erro {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+.mensagem-sucesso {
+    color: green;
+    text-align: center;
+    margin-top: 10px;
 }

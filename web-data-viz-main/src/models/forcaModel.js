@@ -40,10 +40,10 @@ function buscarDadosMaxForca(idUsuario) {
 
 function buscarDadosGrafico(idUsuario) {
     var instrucaoSql = `
-         SELECT forca, dt as horario
-        FROM resultado 
-        WHERE fkUsuario = ${idUsuario} 
-        ORDER BY id DESC 
+        	SELECT forca, dt as horario
+		FROM resultado r join Usuario u on r.fkUsuario = u.idUsuario
+        where u.idUsuario = idUsuario
+        ORDER BY fkJogo DESC 
         LIMIT 7;
     `;
 
