@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     background-color: #0c0c0c;
@@ -13,6 +17,9 @@ body {
 
 .navbar img {
     height: 58px;
+}
+.navbar img:hover {
+    transform: scale(1.05);
 }
 
 .geral {
@@ -115,7 +122,7 @@ body {
     background-color: #000000;
     border: 2px solid white;
     border-right: 0;
-    height: 71.6vh;
+    height: 100%;
     width: 40%;
     border-radius: 3px;
     align-items: center;
