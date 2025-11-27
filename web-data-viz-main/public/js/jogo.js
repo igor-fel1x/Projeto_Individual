@@ -4,71 +4,104 @@ var tempo = 5
 var intervalo
 var jogo = false;
 var forcaFinal = 0 
+var intervaloDiminuir
 
-
-janela.style.display='none'
-b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-
+// Elementos do HTML
 var barraForca = document.getElementById("barraForca");
 var geral = document.getElementById("geral");
 var contador = document.getElementById("contadorForca");
+var telaResultado = document.getElementById("telaResultado");
+var forcaValor = document.getElementById("forcaValor");
+
+janela.style.display = 'none';
+telaResultado.style.display = 'none';
+b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
 function atualizar(){
     var porc = (barra/maxBarra) * 100 
-     barraForca.style.width = porc + "%";
+    barraForca.style.width = porc + "%";
 
-     if(porc >= 0 && porc < 40){
+    if(porc >= 0 && porc < 40){
         barraForca.style.backgroundColor = "#18d81eff"
-      } else if ( porc >= 40 && porc < 80){
+    } else if ( porc >= 40 && porc < 80){
         barraForca.style.backgroundColor = "#fffb00ff"
-      } else {
-         barraForca.style.backgroundColor = "#ff0000ff"
-      }
+    } else {
+        barraForca.style.backgroundColor = "#ff0000ff"
     }
+}
 
-    function aumentarforca(){
-        if (!jogo) {
-         iniciar(); 
-         return;
-  }
-        if(tempo > 0 && barra < maxBarra){
-            barra++
-            atualizar()
-        }
+function diminuirForca() {
+    if (jogo && barra > 0) {
+        barra--;
+        atualizar();
     }
-     function executarSoco() {
-   forcaFinal = barra * 10;
-  contador.innerHTML = "Força final: " + forcaFinal;
-  img_luva.src = "assets/imgs/imgluva.png";
-  img_alvo.src = "assets/imgs/alvo2.png";
-  jogo = false
+}
 
+function aumentarforca(){
+    if (!jogo) {
+        iniciar(); 
+        return;
+    }
+    
+    if(tempo > 0 && barra < maxBarra){
+        barra++
+        atualizar()
+    }
+}
 
-  cadastrarBD()
-  janela.style.display='block'
+function executarSoco() {
+    forcaFinal = barra * 10;
+    contador.innerHTML = "Força final: " + forcaFinal;
+    img_luva.src = "assets/imgs/imgluva.png";
+    img_alvo.src = "assets/imgs/alvo2.png";
+    jogo = false
+    
+    // Parar de diminuir a força
+    clearInterval(intervaloDiminuir);
+    
+    // Mostrar resultado
+    mostrarResultado();
+    
+    cadastrarBD()
+    janela.style.display='block'
+}
 
+function mostrarResultado() {
+    forcaValor.innerHTML = forcaFinal;
+    telaResultado.style.display = "flex";
+    janela.style.display='block'
+    geral.style.display='none'
 
 }
 
-    function iniciar(){
-        img_alvo.src = "assets/imgs/alvo.png";
-        barra = 0 
-        tempo = 5
-        contador.innerHTML = "Tempo: " + tempo + "s";
-        jogo = true
-        atualizar ()
+function reiniciarJogo() {
+    telaResultado.style.display = "none";
+    iniciar();
+}
 
-  intervalo = setInterval(function () {
-    tempo--;
+function iniciar(){
+    // Resetar elementos do jogo
+    img_alvo.src = "assets/imgs/alvo.png";
+    barra = 0 
+    tempo = 5
     contador.innerHTML = "Tempo: " + tempo + "s";
+    jogo = true
+    atualizar()
+    
+    // Iniciar a diminuição automática da força
+    intervaloDiminuir = setInterval(diminuirForca, 200);
 
-    if (tempo <= 0) {
-      clearInterval(intervalo);
-      executarSoco();
-    }
-  }, 1000); 
+    intervalo = setInterval(function () {
+        tempo--;
+        contador.innerHTML = "Tempo: " + tempo + "s";
 
-    }
+        if (tempo <= 0) {
+            clearInterval(intervalo);
+            executarSoco();
+        }
+    }, 1000); 
+    
+}
 
 geral.onclick = aumentarforca;
 
@@ -92,13 +125,6 @@ function cadastrarBD(){
         }),
     });
 }
-
-
-
-
-
-
-
 
 function buscarUltimoIdjogo() {
     fetch(`/partida/ultimas/${idUsuario}`, { cache: 'no-store' }).then(function (response) {

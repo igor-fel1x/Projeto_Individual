@@ -8,55 +8,43 @@
 </head>
 
 <body>
-    <div class=" navbar">
+    <div class="navbar">
         <img src="assets/imgs/Design_sem_nome__1_-removebg-preview.png" alt="">
     </div>
 
-    
-<body  onload="obterDados()"></body> <!-- Chamando a função obterDados ao carregar a página -->
-  
+    <body onload="obterDados()"></body> <!-- Chamando a função obterDados ao carregar a página -->
 
     <div class="janela" id="janela">
-
         <div class="header-left dash-header">
-
             <h1>Igao</h1>
-
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
             </div>
-
             <div class="btn-nav">
                 <a href="../jogo.html">
-                   <h3> Jogar</h3>
+                    <h3>Jogar</h3>
                 </a>
             </div>
-
             <div class="btn-nav-white">
                 <a href="./dashboard/dashboard.html">
                     <h3>Resultados</h3>
                 </a>
             </div>
-
             <div class="btn-logout">
                 <a href="../index.html">
-                <h3>Sair</h3>
+                    <h3>Sair</h3>
                 </a>
             </div>
-
         </div>
+    </div>
 
-        </div>
-
-
-
-    <div class="geral" id="geral"  onclick="aumentarforca()">
-        <div class=" conteudo-geral">
+    <div class="geral" id="geral" onclick="aumentarforca()">
+        <div class="conteudo-geral">
             <div class="contadorForca" id="contadorForca">Tempo: 6s</div>
 
             <div class="alvo" id="alvo">
                 <div class="alvo2">
-                <img id="img_alvo" src="assets/imgs/alvo.png" alt="">
+                    <img id="img_alvo" src="assets/imgs/alvo.png" alt="">
                 </div>
             </div>
 
@@ -67,6 +55,16 @@
             <div class="barra" id="barra">
                 <div class="barraForca" id="barraForca"></div>
             </div>
+        </div>
+    </div>
+
+    <!-- Tela de Resultado Final -->
+    <div class="tela-resultado" id="telaResultado">
+        <div class="resultado-conteudo">
+            <h2>Resultado Final </h2>
+            <div class="forca-valor" id="forcaValor">0</div>
+            <p>pontos de força</p>
+            
         </div>
     </div>
 

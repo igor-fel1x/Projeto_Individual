@@ -188,3 +188,64 @@ body {
   margin-bottom: 100px;
   cursor: pointer;
 }
+
+.tela-resultado {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.resultado-conteudo {
+    background-color: #222;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    border: 3px solid #32b9cd;
+    box-shadow: 0 0 30px rgba(50, 185, 205, 0.6);
+    max-width: 400px;
+    width: 90%;
+}
+
+.resultado-conteudo h2 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.resultado-conteudo p {
+    color: #ccc;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.forca-valor {
+    font-size: 60px;
+    font-weight: bold;
+    color: #ffcc00;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#jogarNovamente {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: all 0.3s;
+}
+
+#jogarNovamente:hover {
+    background-color: #cc0000;
+    transform: scale(1.05);
+}
