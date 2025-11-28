@@ -1,5 +1,5 @@
 var barra = 0
-var maxBarra = 250
+var maxBarra = 50
 var tempo = 5
 var intervalo
 var jogo = false;

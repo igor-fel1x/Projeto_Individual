@@ -30,12 +30,34 @@
 
 
     <div class=" navbar">
-        <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-        <p> <a href="../index.html">Voltar </a></p>
+        <img  onclick="lateral()"  src="../assets/imgs/engrenagem.png" alt="">
     </div>
 
      <div class="hello">
             </div>
+
+     <div class="janela" id="janela">
+        <div class="header-left dash-header">
+            <h1>???</h1>
+            <div class="hello">
+                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            </div>
+            <div class="btn-nav">
+                <a href="../jogo.html">
+                    <h3>Jogar Novamente</h3>
+                </a>
+            </div>
+            <div class="btn-nav-white">
+                <a href="../dashboard/cards.html">
+                    <h3>Tela Inicial</h3>
+                </a>
+            </div>
+            <div class="btn-logout">
+                 <h3 onclick="sair_lateral()">Voltar</h3>
+            </div>
+        </div>
+    </div>
+
 
     <div class="geral">
         <div class="kpi">
@@ -80,8 +102,19 @@
 
 </html>
 <script>
-  
+  janela.style.display='none'
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    function lateral(){
+        janela.style.display='block'
+
+    }
+
+    function sair_lateral(){
+          janela.style.display='none'
+
+
+    }
   
  function buscarDadosGrafico() {
     var ctx = document.getElementById('barra').getContext('2d');
@@ -114,16 +147,20 @@
           datasets: [{
               label: 'Força (N)', // Nome do conjunto de dados
               data: forcas, // Dados dos votos
+               font: {
+                   size: 20,
+                 },
               backgroundColor: [
                   ' rgb(175, 19, 19)', // Cor de fundo das barras
               ],
               borderColor: [
                   'rgb( 0, 0, 0)', // Cor da borda das barras
               ],
-              borderWidth: 2 // Largura da borda das barras
+              borderWidth: 3// Largura da borda das barras
           }]
       },
          options: {
+                    // maintainAspectRatio: false, 
                     responsive: true,
                     scales: {
                         y: {
@@ -135,17 +172,23 @@
                             },
                             title: {
                                 display: true,
-                                text: 'Força (N)'
+                                text: 'Força (N)',
+                                font: {
+                                    size: 20,
+                                }
                             }
                         },
                         x: {
                             title: {
                                 display: true,
-                                text: 'Tentativas'
+                                text: 'Tentativas',
+                                 font: {
+                                    size: 20,
+                                }
                             },
                             ticks: {
-                                callback: function(value) {
-                                    return value; // Mostra só o número
+                                function(value) {
+                                return value; // Mostra só o número
                                 }
                             }
                         }

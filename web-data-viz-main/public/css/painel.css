@@ -8,7 +8,7 @@ body {
   font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   /* background-image: url(../assets/imgs/cage2.png); */
   /* background-position: center; */
-  background-color: black;
+  /* background-image: url(../assets/imgs/cage2.png); */
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -113,3 +113,4 @@ body {
   margin-bottom: 100px;
   cursor: pointer;
 }
+ 

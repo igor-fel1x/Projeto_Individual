@@ -10,8 +10,7 @@
 
 
     <link rel="stylesheet" href="./../css/painel.css">
-    <link rel="stylesheet" href="./../css/estilo.css" />
-
+ 
     <script src="../js/sessao.js"></script>
     <script src="../js/alerta.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -22,14 +21,20 @@
 
 <body onload="validarSessao(), exibirAquarios(),  atualizacaoPeriodica()">
 
+
+    <div class="geral3">
+
+
+
+
     <div class="janela">
 
         <div class="header-left dash-header">
 
-            <h1>Igao</h1>
+            <h1>??</h1>
 
             <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+                <h3>Bem vindo, <span id="b_usuario"> usuário</span>!</h3>
             </div>
 
             <div class="btn-nav">
@@ -54,35 +59,14 @@
 
 
             <div class="cards" id="cardAquarios">
-
+               
             </div>
 
         </div>
 
     </div>
+        
 
 </body>
-
-<script>
-
-    function exibirAquarios() {
-        JSON.parse(sessionStorage.AQUARIOS).forEach(item => {
-            document.getElementById("cardAquarios").innerHTML += `
-                    <div class="card-aquario">
-                        <div class="title-aquario">
-                            <h1>${item.descricao}</h1>
-                        </div>
-                        <div class="desc-aquario">
-                        <div class="temperatura">
-                            <p id="temp_aquario_${item.id}">-°C</p>
-                        </div>
-                        <div class="cor-alerta" id="card_${item.id}"></div>
-                    </div>
-                    </div>
-                    `
-        });
-    }
-
-</script>
 
 </html>

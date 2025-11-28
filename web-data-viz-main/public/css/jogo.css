@@ -2,18 +2,18 @@ body {
     margin: 0;
     background-color: #111;
 }
-
 .navbar {
     display: flex;
-    background-color: #222;
-    height: 50px;
-    width: auto;
+    background-color: white;
+    height: 54px;
     border-bottom: 3px solid red;
-    align-items: center;
 }
 
 .navbar img {
-    height: 50px;
+    height: 58px;
+}
+.navbar img:hover {
+    transform: scale(1.05);
 }
 
 .geral {
