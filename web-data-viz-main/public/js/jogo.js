@@ -1,10 +1,11 @@
 var barra = 0
-var maxBarra = 50
+var maxBarra = 100
 var tempo = 5
 var intervalo
 var jogo = false;
 var forcaFinal = 0 
 var intervaloDiminuir
+var contagemRegressiva
 
 // Elementos do HTML
 var barraForca = document.getElementById("barraForca");
@@ -12,10 +13,34 @@ var geral = document.getElementById("geral");
 var contador = document.getElementById("contadorForca");
 var telaResultado = document.getElementById("telaResultado");
 var forcaValor = document.getElementById("forcaValor");
+var telaContagem = document.getElementById("telaContagem");
+var numeroContagem = document.getElementById("numeroContagem");
+var resultadoConteudo = document.querySelector(".resultado-conteudo");
 
 janela.style.display = 'none';
 telaResultado.style.display = 'none';
+telaContagem.style.display = 'none';
 b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+
+
+function iniciarContagem() {
+    telaContagem.style.display = "flex";
+    var contadorNumero = 3;
+    numeroContagem.innerHTML = contadorNumero;
+    
+    contagemRegressiva = setInterval(function() {
+        contadorNumero--;
+        numeroContagem.innerHTML = contadorNumero;
+        
+        if (contadorNumero <= 0) {
+            clearInterval(contagemRegressiva);
+            telaContagem.style.display = "none";
+            iniciar();
+        }
+    }, 1000);
+}
+
 
 function atualizar(){
     var porc = (barra/maxBarra) * 100 
@@ -39,7 +64,7 @@ function diminuirForca() {
 
 function aumentarforca(){
     if (!jogo) {
-        iniciar(); 
+     iniciarContagem();
         return;
     }
     
@@ -69,14 +94,14 @@ function executarSoco() {
 function mostrarResultado() {
     forcaValor.innerHTML = forcaFinal;
     telaResultado.style.display = "flex";
-    janela.style.display='block'
-    geral.style.display='none'
+    geral.style.display= 'none'
 
 }
 
 function reiniciarJogo() {
     telaResultado.style.display = "none";
-    iniciar();
+    iniciarContagem();
+
 }
 
 function iniciar(){
@@ -97,6 +122,7 @@ function iniciar(){
 
         if (tempo <= 0) {
             clearInterval(intervalo);
+             clearInterval(intervaloDiminuir);
             executarSoco();
         }
     }, 1000); 

@@ -1,80 +1,113 @@
-body{
+/* RESET BÁSICO */
+* {
     margin: 0;
-    top: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.academias {
-    padding: 60px 20px;
-    background-color: rgb(16, 16, 16);
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    font-family: Arial, sans-serif;
     color: white;
-    text-align: center;
-    height: 87vh;
 }
 
-.conteudoJogar{
+/* CONTAINER PRINCIPAL */
+.academias {
+       background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    height: 100vh;
     display: flex;
     justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.conteudoJogar {
+    background-color: rgb(17, 17, 17);
+    height: 100%;
+    width: 80%;
+    border-radius: 15px;
+    border: 3px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteudoJogo {
+    height: 550px;
+    /* background-color: green; */
+    width: 80%;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: green;
-    height: 90vh;
+    justify-content: space-between;
+    padding: 30px;
 }
 
-.conteudoJogo{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: yellow;
-    height: 50%;
-    width: 80%;
-}
-
+/* TÍTULO */
 .titulo-academias {
     margin-bottom: 30px;
-    color: black;
 }
 
-.conteudo-titulo-academias p {
-    font-size: 2.5rem;
+.conteudo-titulo-academias h1 {
+    font-size: 42px;
     font-weight: bold;
+    color: white;
+    text-align: center;
 }
 
+/* CONTEÚDO DOS PASSOS */
 .conteudo-academias {
-    max-width: 800px;
-    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.texto-academias p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
+.texto-academias {
+    background-color: #333;
+    width: 100%;
+    height: 350px;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
-.texto-academias{
-    background-color: white;
-    height: 30vh;
-    width:  100%;
+.passo {
+    padding: 15px;
+    border-left: 4px solid red;
+    /* background-color: #444; */
+    border-radius: 0 8px 8px 0;
 }
 
-.botao-academias {
-    margin-top: 30px;
+.passo h3 {
+    color: #ffcc00;
+    font-size: 18px;
+    margin-bottom: 8px;
 }
 
+.passo p {
+    color: #ccc;
+    font-size: 16px;
+}
+
+/* BOTÃO */
 .botao-academias button {
     background-color: red;
-    color: black;
-    border: none;
-    padding: 15px 30px;
-    font-size: 1.2rem;
+    color: white;
+    border: 3px solid white;
+    padding: 18px 50px;
+    font-size: 20px;
     font-weight: bold;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: all 0.3s ease;
 }
 
 .botao-academias button:hover {
-    background-color: #000000;
-    color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    background-color: #cc0000;
+    transform: scale(1.05);
 }

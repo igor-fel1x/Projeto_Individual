@@ -1,72 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AquaTech | Tempo Real</title>
-
-
-    <link rel="stylesheet" href="./../css/painel.css">
- 
-    <script src="../js/sessao.js"></script>
-    <script src="../js/alerta.js"></script>
+    <link rel="stylesheet" href="./../css/inicial.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 
-<body onload="validarSessao(), exibirAquarios(),  atualizacaoPeriodica()">
-
-
+<body onload="validarSessao()">
     <div class="geral3">
-
-
-
-
-    <div class="janela">
-
-        <div class="header-left dash-header">
-
-            <h1>??</h1>
-
-            <div class="hello">
-                <h3>Bem vindo, <span id="b_usuario"> usuário</span>!</h3>
+        <div class="janela">
+            <div class="header-left">
+                <img src="../assets/imgs/logo2.png" alt="">
+                <div class="hello">
+                    <h3>Bem vindo, <span id="b_usuario">usuário</span>!</h3>
+                </div>
+                <div class="btn-nav">
+                    <a href="../jogo.html">
+                       <h3>Jogar</h3>
+                    </a>
+                </div>
+                <div class="btn-nav-white">
+                    <a href="../dashboard/comojogar.html">
+                        <h3>Como Jogar?</h3>
+                    </a>
+                </div>
+                <div class="btn-nav-black">
+                    <a href="../dashboard/dashboard.html">
+                        <h3>Resultados</h3>
+                    </a>
+                </div>
+                <div class="btn-logout">
+                    <a href="../index.html">
+                    <h3>Sair</h3>
+                    </a>
+                </div>
             </div>
-
-            <div class="btn-nav">
-                <a href="../jogo.html">
-                   <h3> Jogar</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="../dashboard/dashboard.html">
-                    <h3>Resultados</h3>
-                </a>
-            </div>
-
-            <div class="btn-logout">
-                <a href="../index.html">
-                <h3>Sair</h3>
-                </a>
-            </div>
-
-        </div>
-
 
             <div class="cards" id="cardAquarios">
-               
+                <!-- Card de Boas-vindas -->
+                <div class="card-bemvindo">
+                    <h2> BEM-VINDO AO <span class="destaque"> I</span>FIGHT LAB! </h2>
+                    <p>Teste sua força e velocidade neste desafio!</p>
+                    <p>Clique em <span class="destaque">"Jogar"</span> para começar ou em <span class="destaque">"Como Jogar"</span> para aprender as regras.</p>
+                    <p>Mostre que você tem o que é preciso para chegar ao topo!</p>
+                </div>
             </div>
-
         </div>
-
     </div>
-        
-
 </body>
-
 </html>

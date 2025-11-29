@@ -15,6 +15,9 @@ body {
 .navbar img:hover {
     transform: scale(1.05);
 }
+.header-left img {
+    height: 200px;
+}
 
 .geral {
     display: flex;
@@ -231,21 +234,36 @@ body {
     margin: 20px 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
-
-#jogarNovamente {
-    background-color: red;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 20px;
-    transition: all 0.3s;
+/* TELA DE CONTAGEM REGRESSIVA */
+.tela-contagem {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
 }
 
-#jogarNovamente:hover {
-    background-color: #cc0000;
-    transform: scale(1.05);
+.contagem-conteudo {
+    background-color: #222;
+    padding: 50px;
+    border-radius: 20px;
+    text-align: center;
+    border: 4px solid red;
+}
+
+.numero-contagem {
+    font-size: 100px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.contagem-conteudo p {
+    color: white;
+    font-size: 24px;
+    margin: 0;
 }
