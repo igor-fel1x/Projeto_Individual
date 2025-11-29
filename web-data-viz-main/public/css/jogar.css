@@ -3,6 +3,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
+    color: white;
 }
 
 body {
@@ -13,8 +15,9 @@ body {
     color: white;
 }
 
+
 /* CONTAINER PRINCIPAL */
-.academias {
+.jogar {
        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
     height: 100vh;
     display: flex;
@@ -46,11 +49,11 @@ body {
 }
 
 /* TÍTULO */
-.titulo-academias {
+.titulo-jogar {
     margin-bottom: 30px;
 }
 
-.conteudo-titulo-academias h1 {
+.conteudo-titulo-jogar h1 {
     font-size: 42px;
     font-weight: bold;
     color: white;
@@ -58,14 +61,14 @@ body {
 }
 
 /* CONTEÚDO DOS PASSOS */
-.conteudo-academias {
+.conteudo-jogar {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.texto-academias {
+.texto-jogar {
     background-color: #333;
     width: 100%;
     height: 350px;
@@ -96,7 +99,7 @@ body {
 }
 
 /* BOTÃO */
-.botao-academias button {
+.botao-jogar button {
     background-color: red;
     color: white;
     border: 3px solid white;
@@ -105,9 +108,10 @@ body {
     font-weight: bold;
     border-radius: 10px;
     cursor: pointer;
+    
 }
 
-.botao-academias button:hover {
+.botao-jogar button:hover {
     background-color: #cc0000;
     transform: scale(1.05);
 }

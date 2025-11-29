@@ -1,7 +1,15 @@
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 body {
     margin: 0;
     background-color: #111;
+    font-family: 'Barlow', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+
 .navbar {
     display: flex;
     background-color: white;
@@ -11,52 +19,77 @@ body {
 
 .navbar img {
     height: 58px;
+    border-radius: 0; 
 }
+
 .navbar img:hover {
     transform: scale(1.05);
 }
-.header-left img {
-    height: 200px;
-}
 
+ 
 .geral {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 90vh;
     width: 100%;
+    background: radial-gradient(circle at center, #222, #111, #000);
 }
 
 .conteudo-geral {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #222;
+    background: linear-gradient(135deg, #222, #333);
     height: 75vh;
     width: 60%;
-    border: 2px solid #444;
-    border-radius: 10px;
-    padding: 10px;
+    border: 3px solid #ff0000;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.4);
+    position: relative;
+}
+
+.conteudo-geral::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.7);
+    pointer-events: none;
 }
 
 .contadorForca {
     font-size: 24px;
     padding: 15px 20px;
     margin-top: 10px;
-    background-color: green;
+    background: linear-gradient(135deg, #0004f1, #32b9cd);
     border: 2px solid #fff;
     border-radius: 8px;
-    font-family: 'Trebuchet MS', sans-serif;
     color: white;
     font-weight: bold;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.alvo img,
-.alvo2 img,
 .luva img {
     width: 100px;
     margin: 15px;
     cursor: pointer;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+}
+
+.luva:active {
+    transform: scale(0.95);
+}
+
+.alvo img {
+    height: 140px;
+    width: auto;
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.5));
 }
 
 .barra {
@@ -66,131 +99,98 @@ body {
     border-radius: 10px;
     overflow: hidden;
     margin-top: 30px;
-    border: 1px solid #555;
+    border: 2px solid #555;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .barraForca {
     height: 100%;
     width: 0%;
-    background: red;
     transition: width 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
 }
 
-/* pagina mural */
-
-@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  /* background-image: url(../assets/imgs/cage2.png); */
-  /* background-position: center; */
-  background-color: black;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-
-/* PAGINA DOS GRÁFICOS 2023 */
-
+ 
 .janela {
-  display: flex;
-  /* width: 100vw; */
-  /* background-color: #32b9cd; */
-}
-
-.header-left a {
-  text-decoration: none;
-  color: white;
+    display: none; 
 }
 
 .header-left {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  height: 100vh;
-  width: 16%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  border-right: 3px solid red;
-  background-color: rgb(16, 16, 16);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    border-right: 3px solid red;
+    background-color: rgb(16, 16, 16);
+    padding: 40px 20px;
+    z-index: 1000;
 }
 
-
-
-.header-left h1 {
-  color: #32b9cd;
+.header-left img {
+    height: 180px;
+    /* margin-bottom: 20px; */
 }
 
 .hello {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+    text-align: center;
+    width: 100%;
 }
 
 .hello h3 {
-  color: white;
-  font-weight: 300;
-  font-size: 1.2rem;
+    color: white;
+    font-weight: 300;
+    font-size: 18px;
 }
 
 .hello h3 span {
-  font-weight: 800;
+    font-weight: 800;
+    color: red;
+}
+
+.btn-nav, .btn-nav-white, .btn-logout {
+    width: 200px;
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s;
+    cursor: pointer;
 }
 
 .btn-nav {
-  width: 40%;
-  color: black;
-  background-color: red;
-  border: 3px solid white;
-  border-radius: 5px;
-  text-align: center;
-  padding: 2% 5%;
+    background-color: red;
+    border: 2px solid white;
+    color: black;
 }
 
 .btn-nav-white {
-  width: 40%;
-  background-color: white;
-  border: 3px solid red;
-  border-radius: 5px;
-  text-align: center;
-  padding: 2% 5%;
-}
-
-.btn-nav-white h3 {
-  color: black;
-  padding: 0;
-  margin: 0;
-}
-
-.btn-nav h3 {
-  margin: 0;
-  padding: 0;
-}
-.btn-logout h3{
-  margin: 0;
-  padding: 0;
-  color: red;
-  /* background-color: black; */
-
+    background-color: white;
+    border: 2px solid red;
+    color: black;
 }
 
 .btn-logout {
-  margin: 0;
-  padding: 0;
-  width: 20%;
-  background-color: black;
-  color: white;
-  border-radius: 10px;
-  text-align: center;
-  padding: 10px 15px;
-  margin-bottom: 100px;
-  cursor: pointer;
+    background-color: black;
+    border: 2px solid red;
+    color: red;
 }
+
+.btn-nav:hover, .btn-nav-white:hover, .btn-logout:hover {
+    transform: scale(1.05);
+}
+
+.btn-nav h3, .btn-nav-white h3, .btn-logout h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
 
 .tela-resultado {
     display: none;
@@ -199,18 +199,19 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.9);
     justify-content: center;
     align-items: center;
+    z-index: 900;
 }
 
 .resultado-conteudo {
     background-color: #222;
-    padding: 30px;
+    padding: 40px;
     border-radius: 15px;
     text-align: center;
     border: 3px solid #32b9cd;
-    box-shadow: 0 0 30px rgba(50, 185, 205, 0.6);
+    box-shadow: 0 0 40px rgba(50, 185, 205, 0.7);
     max-width: 400px;
     width: 90%;
 }
@@ -218,7 +219,7 @@ body {
 .resultado-conteudo h2 {
     color: white;
     margin-bottom: 20px;
-    font-size: 24px;
+    font-size: 28px;
 }
 
 .resultado-conteudo p {
@@ -228,42 +229,9 @@ body {
 }
 
 .forca-valor {
-    font-size: 60px;
+    font-size: 72px;
     font-weight: bold;
     color: #ffcc00;
     margin: 20px 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-/* TELA DE CONTAGEM REGRESSIVA */
-.tela-contagem {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    justify-content: center;
-    align-items: center;
-}
-
-.contagem-conteudo {
-    background-color: #222;
-    padding: 50px;
-    border-radius: 20px;
-    text-align: center;
-    border: 4px solid red;
-}
-
-.numero-contagem {
-    font-size: 100px;
-    font-weight: bold;
-    color: white;
-    margin-bottom: 20px;
-}
-
-.contagem-conteudo p {
-    color: white;
-    font-size: 24px;
-    margin: 0;
 }
