@@ -129,10 +129,10 @@ body {
 }
 
 
-.img-box video {
-    height: 220px;
+.img-box img {
+    height: 180px;
     border-radius: 6px;
-    width: 400px;
+    width: auto;
 }
 
 .txt1 {

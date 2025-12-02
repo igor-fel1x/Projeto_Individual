@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    text-decoration: none;
+    
+}
+
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -88,6 +94,8 @@ body {
     width: 100%;
     height: 100vh;
     background: #f8fafc;
+    /* background: linear-gradient(180deg, #1a1a1a 0%,   #f8fafc 80%);  */
+
 }
 
 .titulo {
@@ -153,7 +161,7 @@ body {
     margin-top: 0;
     padding-top: 0;
     border-top: 4px solid #dc2626;
-     background: #0a0a0a;
+     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
 }
 
 .titulo2 {
@@ -319,7 +327,8 @@ body {
  /* inicio federçoes */
 
  .federacoes {
-     background-color: #0a0a0a;
+     /* background-color: #0a0a0a; */
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
     width: 100%;
     height: 100%;
     border-top: 4px solid #dc2626;
@@ -449,6 +458,34 @@ body {
     width: auto;
     border-radius: 20px;
 }
+.carrossel {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.mostrar {
+  opacity: 1;
+  visibility: visible;
+}
+
+.esconder {
+  opacity: 0;
+  visibility: hidden;
+}
+
 
 /* inicio jogo */
 
@@ -457,7 +494,8 @@ body {
     height: 70vh;
     justify-content: space-between;
     border-top: 4px solid #dc2626;
-      background-color: #0a0a0a;
+      /* background-color: #0a0a0a; */
+       background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
     align-items: center;
 }
 
@@ -596,7 +634,8 @@ body {
 
 .geralboxm {
     border-top: 4px solid #dc2626;
-     background: #0a0a0a;
+     /* background: #0a0a0a; */
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -771,9 +810,10 @@ body {
 
 /* inicio grandes nomes */
 .nomesm {
-     background: #0a0a0a;
+     /* background: #0a0a0a; */
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
     width: 100%;
-    height: 70vh;
+    height: 80vh;
     border-top: 4px solid #dc2626;
     border-bottom: 3px solid red;
     }
@@ -794,8 +834,8 @@ body {
     font-weight: bold;
     border-radius: 4px;
     color: white;
-    font-size: 1.8em;
-    margin-bottom: 10px;
+    font-size: 1.7em;
+    margin-bottom: 5px;
 }
 
 .geral1-nomesm {
@@ -809,7 +849,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 1.4em;
+    font-size: 1.3em;
     text-align: left;
     width: 50%;
     margin-left: 20px;
@@ -820,6 +860,30 @@ body {
     display: flex;
     justify-content: center;
     width: 45%;
+}
+/* CSS para carrossel do Muay Thai */
+.carrossel-thai {
+  position: relative;
+  height: 400px;
+  margin-top: 20px;
+}
+
+.slide-thai {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.mostrar {
+  opacity: 1;
+  visibility: visible;
+}
+
+.esconder {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .nome img {
@@ -914,7 +978,7 @@ body {
 }
 
 .botao-academias button {
-    background-color: red;
+    background-color: rgb(0, 0, 0);
     color: black;
     border: none;
     padding: 15px 30px;
@@ -926,10 +990,7 @@ body {
 }
 
 .botao-academias button:hover {
-    background-color: #000000;
-    color: white;
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 /* footer */

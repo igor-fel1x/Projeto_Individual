@@ -1,6 +1,5 @@
 
    var divAguardar = document.getElementById("div_aguardar");
-    divAguardar.style.display = "none";
    
    function entrar() {
         aguardar();
@@ -9,8 +8,7 @@
         var senhaVar = input_senha.value;
 
         if (emailVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            alert('Mensagem de erro para todos os campos em branco')
             finalizarAguardar();
             return false;
         }
@@ -42,6 +40,8 @@
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.idUsuario;
+
+                    alert('Usuario Autenticado, Realizando Login...')
 
                     setTimeout(function () {
                         window.location = "./dashboard/cards.html";

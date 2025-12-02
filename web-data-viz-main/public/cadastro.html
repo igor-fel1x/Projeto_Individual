@@ -24,15 +24,17 @@
           <div class="titulo">
             <h4> Cadastre-se agora</h4>
           </div>
-
+          
           <input type="text" id="nome_input" placeholder="Nickname"> <br>
 
-          <input  oninput="analisarEmail()"" type="text" id="email_input" placeholder="Email"> <br>
+          <input  oninput="analisarEmail()" type="text" id="email_input" placeholder="Email"> <br>
+          <div id="div_email"></div>
 
-          <input type="text" id="senha_input" placeholder="Senha"> <br>
+          <input oninput="validarSenha()" type="password" id="senha_input" placeholder="Senha"> <br>
+          <div id="div_senha"></div>
 
-          <input type="text" id="confirmacao_senha_input" placeholder="Confirmar Senha"> <br>
-
+          <input oninput="senha2()" type="password" id="confirmacao_senha_input" placeholder="Confirmar Senha"> <br>
+          <div id="div_confirmar"></div>
           <div class="botao">
             <button onclick="cadastrar()">Enviar Dados</button>
           </div>
