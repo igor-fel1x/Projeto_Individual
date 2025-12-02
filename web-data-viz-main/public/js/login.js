@@ -9,7 +9,7 @@
 
         if (emailVar == "" || senhaVar == "") {
             alert('Mensagem de erro para todos os campos em branco')
-            finalizarAguardar();
+    
             return false;
         }
         else {
@@ -52,10 +52,11 @@
             } else {
 
                 console.log("Houve um erro ao tentar realizar o login!");
+                alert('Email e/ou senha inválido(s)')
 
                 resposta.text().then(texto => {
                     console.error(texto);
-                    finalizarAguardar(texto);
+    
                 });
             }
 

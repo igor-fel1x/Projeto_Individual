@@ -23,7 +23,8 @@ body {
 }
 
 .navbar img{
-    height: 100px; 
+    height: 40px; 
+    cursor: pointer;
 }
 
 .hello {
@@ -152,6 +153,7 @@ div:has(canvas) {
   border-radius: 5px;
   text-align: center;
   padding: 2px 5px;
+  cursor: pointer;
 }
 
 .btn-nav-white {
@@ -161,6 +163,11 @@ div:has(canvas) {
   border-radius: 5px;
   text-align: center;
   padding: 2px 5px;
+  cursor: pointer;
+}
+
+.btn-logout{
+  cursor: pointer;
 }
 
 .btn-nav-white h3 {

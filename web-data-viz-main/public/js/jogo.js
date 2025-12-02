@@ -1,5 +1,5 @@
 var barra = 0
-var maxBarra = 80
+var maxBarra = 110
 var tempo = 5
 var intervalo
 var jogo = false;
@@ -86,7 +86,7 @@ function executarSoco() {
     setTimeout(function() {
         mostrarResultado();
         janela.style.display = 'block';
-    }, 800);
+    }, 50);
     
     cadastrarBD();
 }

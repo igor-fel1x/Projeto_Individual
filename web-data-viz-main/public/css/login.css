@@ -1,3 +1,7 @@
+* {
+    text-decoration: none;
+}
+
 body {
     margin: 0;
     background-color: #0c0c0c;
@@ -189,4 +193,14 @@ body {
 
 .card_erro:hover {
     background-color: rgba(255, 0, 0, 0.1);
+}
+
+.cadastrar{
+    color: white;
+    font-size: 1.2em;
+}
+
+.cadastrar span{
+    text-decoration: none;
+    color: red;
 }

@@ -50,18 +50,6 @@ body {
     position: relative;
 }
 
-.conteudo-geral::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 15px;
-    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.7);
-    pointer-events: none;
-}
-
 .contadorForca {
     font-size: 24px;
     padding: 15px 20px;
@@ -210,10 +198,11 @@ body {
     padding: 40px;
     border-radius: 15px;
     text-align: center;
-    border: 3px solid #32b9cd;
-    box-shadow: 0 0 40px rgba(50, 185, 205, 0.7);
+    border: 3px solid #ffffff;
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.7);
     max-width: 400px;
     width: 90%;
+    margin-left: 22vw;
 }
 
 .resultado-conteudo h2 {
@@ -231,7 +220,7 @@ body {
 .forca-valor {
     font-size: 72px;
     font-weight: bold;
-    color: #ffcc00;
+    color: #ffffff;
     margin: 20px 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }

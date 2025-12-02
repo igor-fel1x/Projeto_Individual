@@ -82,14 +82,16 @@ body {
     box-sizing: border-box;
 }
 
-.inputsBox1 input::placeholder {
-    color: #cccccc;
+.inputsBox1 input:hover {
+    border-color: #ff4444;
+    background-color: #222222;
 }
 
 .inputsBox1 input:focus {
+    border-color: #ff4444;
+    background-color: #222222;
     outline: none;
-    border-color: #838282;
-    box-shadow: 0 0 8px rgba(255, 0, 0, 0.3);
+    transform: scale(1.02);
 }
 
 .botao {

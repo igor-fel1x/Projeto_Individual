@@ -2,8 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2px; /* Ajuste conforme altura do seu menu */
+}
 *{
     text-decoration: none;
+    /* overflow-x: hidden; */
     
 }
 
@@ -943,6 +949,33 @@ body {
     margin-bottom: 20px;
     color: #555;
 }
+/* BOTÃO SOBRE MIM */
+.botao-sobre {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.botao-sobre button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.botao-sobre button:hover {
+  background-color: #555;
+  transform: translateY(-3px);
+}
+
+.botao-sobre button a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
 
 /* academias */
 .academias {
@@ -1018,4 +1051,9 @@ body {
     text-decoration: none;
     margin-left: 20px;
     transition: color 0.3s;
+}
+
+.links-footer img{
+    height: 60px;
+    border-radius: 4px;
 }

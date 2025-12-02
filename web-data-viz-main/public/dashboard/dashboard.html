@@ -2,11 +2,11 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
+   
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaTech | Dashboards</title>
+    <title>IFIGHT LAB| Dashboards</title>
 
     <link rel="stylesheet" href="../css/dashboard.css">
     <script src="../js/sessao.js"></script>
@@ -30,7 +30,7 @@
 
 
     <div class=" navbar">
-        <img  onclick="lateral()"  src="../assets/imgs/engrenagem.png" alt="">
+        <img  onclick="lateral()"  src="../assets/imgs/barra.png" alt="">
     </div>
 
      <div class="hello">
@@ -203,7 +203,7 @@
 
   // Capturando o elemento canvas pelo id 
  
-
+var teste;
 function consultarDadosMaxForca(){
   var idUsuario = sessionStorage.getItem("ID_USUARIO")
   fetch('/forca/maxforca', {
@@ -223,7 +223,7 @@ function consultarDadosMaxForca(){
       ${respostaConversao[0].maior_forca}
       `
       mediaForca.innerHTML = `
-      ${respostaConversao[0].media_forca}
+      ${Number(respostaConversao[0].media_forca).toFixed()}
       `
       qtdTentativa.innerHTML = `
       ${respostaConversao[0].qtd_tentativas}
