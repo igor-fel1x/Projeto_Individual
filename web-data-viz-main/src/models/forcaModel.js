@@ -43,7 +43,7 @@ function buscarDadosGrafico(idUsuario) {
         	SELECT forca, dt as horario
 		FROM resultado r join Usuario u on r.fkUsuario = u.idUsuario
         where u.idUsuario = idUsuario
-        ORDER BY fkJogo DESC 
+        ORDER BY fkJogo DESC
         LIMIT 7;
     `;
 

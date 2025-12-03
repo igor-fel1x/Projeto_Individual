@@ -195,7 +195,7 @@ function cadastrar() {
       .then(function (dados) {
         console.log("Dados recebidos: ", dados);
         
-        alert('<span style="color: green;">Cadastro realizado com sucesso! Redirecionando...</span>');
+        alert('Cadastro realizado com sucesso! Redirecionando...');
         mensagem_erro.style.display = "block";
 
         setTimeout(() => {

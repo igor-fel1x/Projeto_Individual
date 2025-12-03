@@ -86,7 +86,7 @@ function executarSoco() {
     setTimeout(function() {
         mostrarResultado();
         janela.style.display = 'block';
-    }, 50);
+    }, 300);
     
     cadastrarBD();
 }
